@@ -1,0 +1,27 @@
+[user]
+	email = "Luke.Peltier@microchip.com"
+	name = Luke Peltier
+	signingkey = /home/lpeltier/.ssh/id_ed25519.pub
+[core]
+	editor = nvim
+	excludesFile = ~/.gitignore
+[init]
+	defaultBranch = main
+[maintenance]
+	repo = /home/lpeltier/L1
+[gpg]
+	format = ssh
+[commit]
+	gpgsign = true
+[pull]
+	rebase = false
+[pager]
+	branch = false
+[column]
+	ui = auto
+[branch]
+	sort = -committerdate
+[rerere]
+	enabled = true
+[fetch]
+	prune = true
