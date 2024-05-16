@@ -1,0 +1,11 @@
+stow
+neovim
+zoxide
+git
+fzf
+bat
+ripgrep
+fd
+eza
+starship
+zsh
