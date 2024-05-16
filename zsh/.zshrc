@@ -8,6 +8,7 @@ export PATH=$PATH:$HOME/.local/bin
 export PATH=$PATH:/usr/local/go/bin
 export GOPATH=$HOME/go
 export PATH=$PATH:$GOPATH/bin
+export PATH="$PATH:/opt/nvim-linux64/bin"
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
 
@@ -17,7 +18,6 @@ export ZSH="$HOME/.oh-my-zsh"
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
 ZSH_THEME=""
 
-eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 export ZOXIDE_CMD_OVERRIDE="cd"
 
 # Set list of themes to pick from when loading at random
@@ -118,6 +118,7 @@ alias ls="eza"
 alias ll="ls -lha"
 alias cat="bat"
 alias vim="nvim"
+
 # fnm
 export PATH="$HOME/.local/share/fnm:$PATH"
 eval "`fnm env`"
@@ -146,6 +147,16 @@ export XDG_CONFIG_HOME="$HOME/.config"
 export HOMEBREW_AUTO_UPDATE_SECS="86400"
 bindkey -s ^f "tmux-sessionizer\n"
 
-eval "$(starship init zsh)"
 unsetopt autopushd
 
+export FZF_DEFAULT_OPTS="--color=fg:#c0caf5,bg:#1a1b26,hl:#ff9e64,fg+:#c0caf5,bg+:#292e42,hl+:#ff9e64,info:#7aa2f7,prompt:#7dcfff,pointer:#7dcfff,marker:#9ece6a,spinner:#9ece6a,header:#9ece6a"
+
+export BAT_THEME="tokyonight_night"
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+eval "$(starship init zsh)"
+eval "$(zoxide init zsh)"
+
+export JAVA_HOME="/usr/lib/jvm/java-21-openjdk-amd64"
+export PATH="$PATH:$JAVA_HOME/bin"
+export PATH="$PATH:/opt/apache-maven-3.9.6/bin"

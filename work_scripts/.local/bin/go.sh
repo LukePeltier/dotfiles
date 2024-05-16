@@ -1,8 +1,7 @@
 #!/usr/bin/env bash
 
-EXCEPTIONS=('cafefs' 'cafecoredev' 'cafe1' 'cafecore' 'cafe2' 'cafe3' 'cafedev' 'cafebeta' 'atv' 'atv3' 'rogue7' 'rogue5' 'suncrusher' 'zeus' 'l1houbuild01' 'l1da03' 'l1da02')
+EXCEPTIONS=('cafecoredev' 'cafe3' 'cafedev' 'cafebeta' 'atv' 'atv3' 'rogue7' 'rogue5' 'suncrusher' 'zeus' 'l1houbuild01' 'l1da03' 'l1da02')
 USER=('cafecoredev' 'rogue7' 'rogue5')
-
 array_contains()
 {
    local -r needle="$1"
