@@ -160,3 +160,5 @@ eval "$(zoxide init zsh)"
 export JAVA_HOME="/usr/lib/jvm/java-21-openjdk-amd64"
 export PATH="$PATH:$JAVA_HOME/bin"
 export PATH="$PATH:/opt/apache-maven-3.9.6/bin"
+
+[[ -s "$HOME/.gvm/scripts/gvm" ]] && source "$HOME/.gvm/scripts/gvm"
