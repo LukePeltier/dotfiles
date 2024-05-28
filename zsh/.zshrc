@@ -9,6 +9,7 @@ export PATH=$PATH:/usr/local/go/bin
 export GOPATH=$HOME/go
 export PATH=$PATH:$GOPATH/bin
 export PATH="$PATH:/opt/nvim-linux64/bin"
+export PATH="$PATH:/usr/games"
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
 
@@ -128,7 +129,7 @@ alias ls="eza"
 alias ll="ls -lha"
 alias cat="bat"
 alias vim="nvim"
-
+alias zellij="zellij -l welcome"
 # fnm
 export PATH="$HOME/.local/share/fnm:$PATH"
 eval "`fnm env`"
