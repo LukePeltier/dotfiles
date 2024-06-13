@@ -10,6 +10,7 @@ export GOPATH=$HOME/go
 export PATH=$PATH:$GOPATH/bin
 export PATH="$PATH:/opt/nvim-linux64/bin"
 export PATH="$PATH:/usr/games"
+export ZSH_COMPDUMP=$ZSH/cache/.zcompdump-$HOST
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
 
@@ -173,3 +174,4 @@ export PATH="$PATH:$JAVA_HOME/bin"
 export PATH="$PATH:/opt/apache-maven-3.9.6/bin"
 
 [[ -s "$HOME/.gvm/scripts/gvm" ]] && source "$HOME/.gvm/scripts/gvm"
+
