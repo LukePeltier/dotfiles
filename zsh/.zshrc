@@ -4,6 +4,7 @@
 
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
+export PATH=/run/current-system/sw/bin/:/nix/var/nix/profiles/default/bin:$HOME/.nix-profile/bin:/etc/profiles/per-user/$USER/bin:$PATH
 export PATH=$PATH:$HOME/.local/bin
 export PATH=$PATH:/usr/local/go/bin
 export GOPATH=$HOME/go
@@ -96,6 +97,7 @@ plugins=(git zoxide zsh-syntax-highlighting zsh-autosuggestions)
 
 source $ZSH/oh-my-zsh.sh
 
+source $HOME/.nix-profile/etc/profile.d/hm-session-vars.sh
 # User configuration
 
 # export MANPATH="/usr/local/man:$MANPATH"
@@ -130,7 +132,6 @@ alias ls="eza"
 alias ll="ls -lha"
 alias cat="bat"
 alias vim="nvim"
-alias zellij="zellij -l welcome"
 # fnm
 export PATH="$HOME/.local/share/fnm:$PATH"
 eval "`fnm env`"
@@ -163,7 +164,9 @@ unsetopt autopushd
 
 export FZF_DEFAULT_OPTS="--color=fg:#c0caf5,bg:#1a1b26,hl:#ff9e64,fg+:#c0caf5,bg+:#292e42,hl+:#ff9e64,info:#7aa2f7,prompt:#7dcfff,pointer:#7dcfff,marker:#9ece6a,spinner:#9ece6a,header:#9ece6a"
 
-export BAT_THEME="tokyonight_night"
+export BAT_THEME="Catppuccin Mocha"
+export MANPAGER="sh -c 'col -bx | bat -l man -p'"
+export MANROFFOPT="-c"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 eval "$(starship init zsh)"
@@ -172,6 +175,8 @@ eval "$(zoxide init zsh)"
 export JAVA_HOME="/usr/lib/jvm/java-21-openjdk-amd64"
 export PATH="$PATH:$JAVA_HOME/bin"
 export PATH="$PATH:/opt/apache-maven-3.9.6/bin"
-
+if grep -q "microsoft" /proc/version &>/dev/null; then
+    # Requires: https://sourceforge.net/projects/vcxsrv/ (or alternative)
+    export DISPLAY="$(/sbin/ip route | awk '/default/ { print $3 }'):0"
+fi
 [[ -s "$HOME/.gvm/scripts/gvm" ]] && source "$HOME/.gvm/scripts/gvm"
-
