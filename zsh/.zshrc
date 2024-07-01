@@ -4,7 +4,6 @@
 
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
-export PATH=/run/current-system/sw/bin/:/nix/var/nix/profiles/default/bin:$HOME/.nix-profile/bin:/etc/profiles/per-user/$USER/bin:$PATH
 export PATH=$PATH:$HOME/.local/bin
 export PATH=$PATH:/usr/local/go/bin
 export GOPATH=$HOME/go
@@ -97,7 +96,6 @@ plugins=(git zoxide zsh-syntax-highlighting zsh-autosuggestions)
 
 source $ZSH/oh-my-zsh.sh
 
-source $HOME/.nix-profile/etc/profile.d/hm-session-vars.sh
 # User configuration
 
 # export MANPATH="/usr/local/man:$MANPATH"
