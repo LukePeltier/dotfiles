@@ -24,6 +24,10 @@
     pkgs.bat
     pkgs.ripgrep
     pkgs.fd
+    pkgs.age
+    pkgs.yazi
+    pkgs.sshs
+    pkgs.chezmoi
   ];
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage

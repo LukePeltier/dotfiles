@@ -9,12 +9,11 @@ export PATH=$PATH:$HOME/.local/bin
 export PATH=$PATH:/usr/local/go/bin
 export GOPATH=$HOME/go
 export PATH=$PATH:$GOPATH/bin
-export PATH="$PATH:/opt/nvim-linux64/bin"
+export PATH="$PATH:$HOME/neovim/bin"
 export PATH="$PATH:/usr/games"
 export ZSH_COMPDUMP=$ZSH/cache/.zcompdump-$HOST
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
-
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
@@ -93,7 +92,7 @@ setopt hist_find_no_dups
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git zoxide zsh-syntax-highlighting zsh-autosuggestions)
+plugins=(git zoxide zsh-syntax-highlighting zsh-autosuggestions rye)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -137,7 +136,6 @@ export PATH="$HOME/.local/share/fnm:$PATH"
 eval "`fnm env`"
 
 # pnpm
-export PNPM_HOME="$HOME/.local/share/pnpm"
 case ":$PATH:" in
   *":$PNPM_HOME:"*) ;;
   *) export PATH="$PNPM_HOME:$PATH" ;;
@@ -160,8 +158,6 @@ export XDG_CONFIG_HOME="$HOME/.config"
 export HOMEBREW_AUTO_UPDATE_SECS="86400"
 bindkey -s ^f "tmux-sessionizer\n"
 
-unsetopt autopushd
-
 export FZF_DEFAULT_OPTS="--color=fg:#c0caf5,bg:#1a1b26,hl:#ff9e64,fg+:#c0caf5,bg+:#292e42,hl+:#ff9e64,info:#7aa2f7,prompt:#7dcfff,pointer:#7dcfff,marker:#9ece6a,spinner:#9ece6a,header:#9ece6a"
 
 export BAT_THEME="Catppuccin Mocha"
@@ -180,3 +176,9 @@ if grep -q "microsoft" /proc/version &>/dev/null; then
     export DISPLAY="$(/sbin/ip route | awk '/default/ { print $3 }'):0"
 fi
 [[ -s "$HOME/.gvm/scripts/gvm" ]] && source "$HOME/.gvm/scripts/gvm"
+
+[[ -s "$HOME/.rye" ]] && source "$HOME/.rye/env"
+
+. "$HOME/.atuin/bin/env"
+
+eval "$(atuin init zsh --disable-up-arrow)"
