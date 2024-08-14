@@ -27,7 +27,7 @@
     pkgs.age
     pkgs.yazi
     pkgs.sshs
-    pkgs.chezmoi
+    pkgs.termshark
   ];
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
