@@ -25,9 +25,12 @@
     pkgs.ripgrep
     pkgs.fd
     pkgs.age
-    pkgs.yazi
     pkgs.sshs
-    pkgs.termshark
+    pkgs.helix
+    pkgs.shfmt
+    pkgs.bun
+    pkgs.hurl
+    pkgs.sleek
   ];
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage

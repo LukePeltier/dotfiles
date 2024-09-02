@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+
+if [[ $# -eq 1 ]]; then
+   selected=$1
+else
+   selected=$(fd --type d --hidden --full-path '\.git$' ~ | grep -v ".local" | grep -v ".cache" | grep -v ".tmux" | xargs dirname | fzf)
+fi
+
+if [[ -z $selected ]]; then
+   exit 0
+fi
+
+selected_name=$(basename "$selected" | tr . _)
+
+zellij attach --create "$selected_name" options --default-cwd "$selected"
+
+
