@@ -2,7 +2,18 @@
 {
   home = {
     packages = with pkgs; [
-      hello
+      atuin
+      neovim
+      zoxide
+      git
+      fzf
+      bat
+      ripgrep
+      fd
+      eza
+      starship
+      zsh
+      sshs
     ];
     username = "lpeltier";
     homeDirectory = "/home/lpeltier";
@@ -36,6 +47,8 @@
   };
 
   programs.home-manager.enable = true;
+
+  programs.starship.enable = true;
 
   programs.git = {
     enable = true;
