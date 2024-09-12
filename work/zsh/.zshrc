@@ -92,7 +92,7 @@ setopt hist_find_no_dups
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git zoxide zsh-syntax-highlighting zsh-autosuggestions)
+plugins=(git zoxide zsh-syntax-highlighting zsh-autosuggestions you-should-use)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -130,17 +130,6 @@ export EDITOR='nvim'
 alias ls="eza"
 alias ll="ls -lha"
 alias cat="bat"
-alias vim="nvim"
-# fnm
-export PATH="$HOME/.local/share/fnm:$PATH"
-eval "`fnm env`"
-
-# pnpm
-case ":$PATH:" in
-  *":$PNPM_HOME:"*) ;;
-  *) export PATH="$PNPM_HOME:$PATH" ;;
-esac
-# pnpm end
 
 export PATH="$PATH:/usr/lib/llvm-18/bin"
 
@@ -152,7 +141,7 @@ export CXX=g++
 
 # bun
 export BUN_INSTALL="$HOME/.bun"
-export PATH="$BUN_INSTALL/bin:$PATH"
+export PATH="$PATH:$BUN_INSTALL/bin"
 export NODE_EXTRA_CA_CERTS=/etc/ssl/certs/ca-certificates.crt
 export XDG_CONFIG_HOME="$HOME/.config"
 export HOMEBREW_AUTO_UPDATE_SECS="86400"
@@ -182,3 +171,7 @@ fi
 . "$HOME/.atuin/bin/env"
 
 eval "$(atuin init zsh --disable-up-arrow)"
+
+export VOLTA_HOME="$HOME/.volta"
+
+[[ -s "$VOLTA_HOME" ]] && export PATH="$PATH:$VOLTA_HOME/bin"
