@@ -1,4 +1,9 @@
-{ lib, pkgs, username, ... }: {
+{
+  lib,
+  pkgs,
+  username,
+  ...
+}: {
   home = {
     packages = with pkgs; [
       atuin
@@ -24,6 +29,9 @@
       php84Packages.composer
       unzip
       lazygit
+      alejandra
+      libgcc
+      clang
     ];
     username = "lukep";
     homeDirectory = "/home/lukep";
@@ -35,13 +43,8 @@
       ".zshrc" = {
         source = ./personal/zsh/.zshrc;
       };
-      ".config/nvim" = {
-        source = builtins.fetchGit {
-          url = "https://github.com/LukePeltier/neovim-config.git";
-        };
-      };
-      ".config/tmux" = {
-        source = ./tmux/.config/tmux;
+      ".config/tmux/tmux.conf" = {
+        source = ./tmux/.config/tmux/tmux.conf;
       };
       ".local/bin/tmux-sessionizer" = {
         source = ./scripts/.local/bin/tmux-sessionizer;
@@ -53,6 +56,7 @@
 
     stateVersion = "24.05";
   };
+  programs.zsh.enable = true;
   programs.home-manager.enable = true;
   programs.starship.enable = true;
   programs.git = {
@@ -63,16 +67,19 @@
       key = "/home/lukep/.ssh/id_ed25519.pub";
     };
     extraConfig = {
-      pull = { rebase = false; };
-      fetch = { prune = true; };
-      init = { defaultBranch = "main"; };
-      core = { editor = "nvim"; excludesFile = "~/.gitignore"; };
-      gpg = { format = "ssh"; };
-      commit = { gpgsign = true; };
-      pager = { branch = false; };
-      column = { ui = "auto"; };
-      branch = { sort = "-committerdate"; };
-      rerere = { enabled = true; };
+      pull = {rebase = false;};
+      fetch = {prune = true;};
+      init = {defaultBranch = "main";};
+      core = {
+        editor = "nvim";
+        excludesFile = "~/.gitignore";
+      };
+      gpg = {format = "ssh";};
+      commit = {gpgsign = true;};
+      pager = {branch = false;};
+      column = {ui = "auto";};
+      branch = {sort = "-committerdate";};
+      rerere = {enabled = true;};
     };
   };
 }

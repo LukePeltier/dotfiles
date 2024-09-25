@@ -30,7 +30,7 @@ setopt hist_ignore_all_dups
 setopt hist_save_no_dups
 setopt hist_ignore_dups
 setopt hist_find_no_dups
-plugins=(git zoxide zsh-syntax-highlighting zsh-autosuggestions)
+plugins=(git zoxide zsh-syntax-highlighting zsh-autosuggestions direnv)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -71,3 +71,4 @@ eval "$(atuin init zsh --disable-up-arrow)"
 export VOLTA_HOME="$HOME/.volta"
 
 [[ -s "$VOLTA_HOME" ]] && export PATH="$PATH:$VOLTA_HOME/bin"
+
