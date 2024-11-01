@@ -10,7 +10,6 @@
 in {
   home = {
     packages = with pkgs; [
-      atuin
       zoxide
       git
       fzf
@@ -34,6 +33,14 @@ in {
       lazygit
       btop
       libclangWithPython
+      wishlist
+      gum
+      nh
+      nix-output-monitor
+      fish
+      delta
+      thefuck
+      lf
     ];
     username = "lpeltier";
     homeDirectory = "/home/lpeltier";
@@ -87,6 +94,26 @@ in {
       core = {
         editor = "nvim";
         excludesFile = "~/.gitignore";
+        pager = "delta";
+      };
+      interactive = {
+        diffFilter = "delta --color-only";
+      };
+      delta = {
+        dark = true;
+        navigate = true;
+        line-numbers = true;
+        features = "catppuccin-mocha";
+        side-by-side = true;
+      };
+      merge = {
+        conflictstyle = "diff3";
+      };
+      diff = {
+        colorMoved = "no";
+      };
+      include = {
+        path = "/home/lpeltier/.config/delta/themes/catppuccin.gitconfig";
       };
       gpg = {format = "ssh";};
       commit = {gpgsign = true;};

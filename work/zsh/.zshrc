@@ -4,7 +4,6 @@
 
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
-export PATH=/run/current-system/sw/bin/:/nix/var/nix/profiles/default/bin:$HOME/.nix-profile/bin:/etc/profiles/per-user/$USER/bin:$PATH
 export PATH=$PATH:$HOME/.local/bin
 export PATH=$PATH:/usr/local/go/bin
 export GOPATH=$HOME/go
@@ -168,10 +167,17 @@ fi
 
 [[ -s "$HOME/.rye" ]] && source "$HOME/.rye/env"
 
-. "$HOME/.atuin/bin/env"
-
-eval "$(atuin init zsh --disable-up-arrow)"
-
 export VOLTA_HOME="$HOME/.volta"
 
 [[ -s "$VOLTA_HOME" ]] && export PATH="$PATH:$VOLTA_HOME/bin"
+
+[[ -s "$HOME/.deno" ]] && export PATH="$PATH:$HOME/.deno/bin"
+
+if [[ $(ps --no-header --pid=$PPID --format=comm) != "fish" && -z ${ZSH_EXECUTION_STRING} ]]; then
+    if [[ -o login ]]; then
+        LOGIN_OPTION='--login'
+    else
+        LOGIN_OPTION=''
+    fi
+    exec fish $LOGIN_OPTION
+fi
