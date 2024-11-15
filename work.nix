@@ -41,6 +41,15 @@ in {
       delta
       thefuck
       lf
+      nushell
+      uutils-coreutils-noprefix
+      dust
+      porsmo
+      gitui
+      helix
+      bear
+      jujutsu
+      mosh
     ];
     username = "lpeltier";
     homeDirectory = "/home/lpeltier";
