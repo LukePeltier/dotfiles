@@ -1,5 +1,6 @@
 {
   lib,
+  config,
   pkgs,
   ...
 }: let
@@ -60,22 +61,22 @@ in {
     };
     file = {
       ".zshrc" = {
-        source = ./work/zsh/.zshrc;
+        source = config.lib.file.mkOutOfStoreSymlink ./work/zsh/.zshrc;
       };
       ".config/tmux/tmux.conf" = {
-        source = ./tmux/.config/tmux/tmux.conf;
+        source = config.lib.file.mkOutOfStoreSymlink ./tmux/.config/tmux/tmux.conf;
       };
-      ".local/bin/go.sh" = {
-        source = ./work_scripts/.local/bin/go.sh;
+      ".config/zellij" = {
+        source = config.lib.file.mkOutOfStoreSymlink ./zellij/.config/zellij;
       };
       ".local/bin/tmux-sessionizer" = {
-        source = ./scripts/.local/bin/tmux-sessionizer;
+        source = config.lib.file.mkOutOfStoreSymlink ./scripts/.local/bin/tmux-sessionizer;
       };
       ".wezterm.lua" = {
-        source = ./wezterm/.wezterm.lua;
+        source = config.lib.file.mkOutOfStoreSymlink ./wezterm/.wezterm.lua;
       };
       ".config/starship.toml" = {
-        source = ./starship/starship.toml;
+        source = config.lib.file.mkOutOfStoreSymlink ./starship/starship.toml;
       };
     };
   };

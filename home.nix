@@ -1,5 +1,6 @@
 {
   lib,
+  config,
   pkgs,
   username,
   ...
@@ -40,17 +41,21 @@
       EDITOR = "nvim";
     };
     file = {
+    file = {
       ".zshrc" = {
-        source = ./personal/zsh/.zshrc;
+        source = config.lib.file.mkOutOfStoreSymlink ./work/zsh/.zshrc;
       };
       ".config/tmux/tmux.conf" = {
-        source = ./tmux/.config/tmux/tmux.conf;
+        source = config.lib.file.mkOutOfStoreSymlink ./tmux/.config/tmux/tmux.conf;
+      };
+      ".config/zellij" = {
+        source = config.lib.file.mkOutOfStoreSymlink ./zellij/.config/zellij;
       };
       ".local/bin/tmux-sessionizer" = {
-        source = ./scripts/.local/bin/tmux-sessionizer;
+        source = config.lib.file.mkOutOfStoreSymlink ./scripts/.local/bin/tmux-sessionizer;
       };
       ".wezterm.lua" = {
-        source = ./wezterm/.wezterm.lua;
+        source = config.lib.file.mkOutOfStoreSymlink ./wezterm/.wezterm.lua;
       };
     };
 
