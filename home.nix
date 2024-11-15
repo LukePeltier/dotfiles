@@ -7,8 +7,7 @@
 }: {
   home = {
     packages = with pkgs; [
-      atuin
-      neovim
+      tmux
       zoxide
       git
       fzf
@@ -26,13 +25,22 @@
       rustup
       go
       rye
-      php84
-      php84Packages.composer
+      php82
+      php82Packages.composer
       unzip
       lazygit
-      alejandra
-      libgcc
-      clang
+      btop
+      wishlist
+      gum
+      nh
+      nix-output-monitor
+      fish
+      delta
+      thefuck
+      lf
+      tlrc
+      mosh
+      zellij
     ];
     username = "lukep";
     homeDirectory = "/home/lukep";
@@ -40,7 +48,6 @@
     sessionVariables = {
       EDITOR = "nvim";
     };
-    file = {
     file = {
       ".zshrc" = {
         source = config.lib.file.mkOutOfStoreSymlink ./work/zsh/.zshrc;
@@ -61,9 +68,7 @@
 
     stateVersion = "24.05";
   };
-  programs.zsh.enable = true;
   programs.home-manager.enable = true;
-  programs.starship.enable = true;
   programs.git = {
     enable = true;
     userEmail = "luke@lukepeltier.com";
