@@ -66,6 +66,9 @@ in {
       ".config/tmux/tmux.conf" = {
         source = config.lib.file.mkOutOfStoreSymlink ./tmux/.config/tmux/tmux.conf;
       };
+      ".local/bin/zellij-sessionizer" = {
+        source = config.lib.file.mkOutOfStoreSymlink ./zellij/.local/bin/zellij-sessionizer;
+      };
       ".config/zellij" = {
         source = config.lib.file.mkOutOfStoreSymlink ./zellij/.config/zellij;
       };
