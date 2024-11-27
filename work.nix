@@ -86,10 +86,6 @@ in {
 
   programs.home-manager.enable = true;
 
-  programs.starship = {
-    enable = true;
-  };
-
   programs.git = {
     enable = true;
     userEmail = "Luke.Peltier@microchip.com";

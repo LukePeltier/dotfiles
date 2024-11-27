@@ -25,7 +25,7 @@ transform_home_path() {
 }
 
 fzf_window() {
-   fzf --reverse --no-sort --border "rounded" --info inline --pointer "→" --prompt "Session > " --header "Select session" --preview "echo {2} | grep -q 'Session' && echo {} || ls {3}"
+   fzf --reverse --no-sort --border "rounded" --info inline --pointer "→" --prompt "Session > " --header "Select session"
 }
 
 sessions_list(){

@@ -146,9 +146,15 @@ export XDG_CONFIG_HOME="$HOME/.config"
 export HOMEBREW_AUTO_UPDATE_SECS="86400"
 bindkey -s ^f "tmux-sessionizer\n"
 
-export FZF_DEFAULT_OPTS="--color=fg:#c0caf5,bg:#1a1b26,hl:#ff9e64,fg+:#c0caf5,bg+:#292e42,hl+:#ff9e64,info:#7aa2f7,prompt:#7dcfff,pointer:#7dcfff,marker:#9ece6a,spinner:#9ece6a,header:#9ece6a"
+export FZF_DEFAULT_OPTS="\
+  --highlight-line \
+  --info=inline-right \
+  --ansi \
+  --layout=reverse \
+  --border=none
+"
 
-export BAT_THEME="Catppuccin Mocha"
+export BAT_THEME="kanagawa"
 export MANPAGER="sh -c 'col -bx | bat -l man -p'"
 export MANROFFOPT="-c"
 
@@ -173,7 +179,8 @@ export VOLTA_HOME="$HOME/.volta"
 
 [[ -s "$HOME/.deno" ]] && export PATH="$PATH:$HOME/.deno/bin"
 
-if [[ $(ps --no-header --pid=$PPID --format=comm) != "fish" && -z ${ZSH_EXECUTION_STRING} ]]; then
+if [[ $(ps --no-header --pid=$PPID --format=comm) != "fish" && -z ${BASH_EXECUTION_STRING} && ${SHLVL} == 1 ]]
+then
     if [[ -o login ]]; then
         LOGIN_OPTION='--login'
     else
