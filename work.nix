@@ -27,7 +27,6 @@ in {
       zig
       rustup
       go
-      rye
       php82
       php82Packages.composer
       unzip
@@ -51,6 +50,11 @@ in {
       bear
       jujutsu
       mosh
+      ocaml
+      opam
+      gsoap
+      libgcc
+      uv
     ];
     username = "lpeltier";
     homeDirectory = "/home/lpeltier";
