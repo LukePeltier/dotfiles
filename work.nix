@@ -62,26 +62,6 @@ in {
     sessionVariables = {
       EDITOR = "nvim";
     };
-    file = {
-      ".zshrc" = {
-        source = config.lib.file.mkOutOfStoreSymlink ./work/zsh/.zshrc;
-      };
-      ".config/tmux/tmux.conf" = {
-        source = config.lib.file.mkOutOfStoreSymlink ./tmux/.config/tmux/tmux.conf;
-      };
-      ".local/bin/zellij-sessionizer" = {
-        source = config.lib.file.mkOutOfStoreSymlink ./zellij/.local/bin/zellij-sessionizer;
-      };
-      ".config/zellij" = {
-        source = config.lib.file.mkOutOfStoreSymlink ./zellij/.config/zellij;
-      };
-      ".local/bin/tmux-sessionizer" = {
-        source = config.lib.file.mkOutOfStoreSymlink ./scripts/.local/bin/tmux-sessionizer;
-      };
-      ".wezterm.lua" = {
-        source = config.lib.file.mkOutOfStoreSymlink ./wezterm/.wezterm.lua;
-      };
-    };
   };
 
   programs.home-manager.enable = true;
@@ -112,7 +92,6 @@ in {
         dark = true;
         navigate = true;
         line-numbers = true;
-        features = "catppuccin-mocha";
         side-by-side = true;
       };
       merge = {
@@ -120,9 +99,6 @@ in {
       };
       diff = {
         colorMoved = "no";
-      };
-      include = {
-        path = "/home/lpeltier/.config/delta/themes/catppuccin.gitconfig";
       };
       gpg = {format = "ssh";};
       commit = {gpgsign = true;};
