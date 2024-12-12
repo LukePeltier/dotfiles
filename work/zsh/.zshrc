@@ -38,13 +38,7 @@ export VOLTA_HOME="$HOME/.volta"
 source $HOME/.nix-profile/etc/profile.d/hm-session-vars.sh
 
 # CLI configs
-export ZOXIDE_CMD_OVERRIDE="cd"
-export BAT_THEME="kanagawa"
-export MANPAGER="sh -c 'col -bx | bat -l man -p'"
-export MANROFFOPT="-c"
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-
-bindkey -s ^f "zellij-sessionizer\n"
 
 # WSL workaround
 if grep -q "microsoft" /proc/version &>/dev/null; then

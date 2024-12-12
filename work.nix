@@ -18,7 +18,6 @@ in {
       ripgrep
       fd
       eza
-      starship
       zsh
       sshs
       bun
@@ -81,9 +80,6 @@ in {
       };
       ".wezterm.lua" = {
         source = config.lib.file.mkOutOfStoreSymlink ./wezterm/.wezterm.lua;
-      };
-      ".config/starship.toml" = {
-        source = config.lib.file.mkOutOfStoreSymlink ./starship/starship.toml;
       };
     };
   };
