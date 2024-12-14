@@ -22,7 +22,6 @@
       volta
       pnpm
       zig
-      rustup
       go
       rye
       php82
@@ -42,6 +41,8 @@
       mosh
       zellij
       stow
+      gcc
+      libclang
     ];
     username = "lukep";
     homeDirectory = "/home/lukep";

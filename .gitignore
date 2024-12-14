@@ -1,3 +1,4 @@
 tmux/.config/tmux/plugins
 .wishlist
 fish/.config/fish/fish_variables
+fish/.config/fish/completions
