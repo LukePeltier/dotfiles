@@ -41,29 +41,13 @@
       tlrc
       mosh
       zellij
+      stow
     ];
     username = "lukep";
     homeDirectory = "/home/lukep";
 
     sessionVariables = {
       EDITOR = "nvim";
-    };
-    file = {
-      ".zshrc" = {
-        source = config.lib.file.mkOutOfStoreSymlink ./work/zsh/.zshrc;
-      };
-      ".config/tmux/tmux.conf" = {
-        source = config.lib.file.mkOutOfStoreSymlink ./tmux/.config/tmux/tmux.conf;
-      };
-      ".config/zellij" = {
-        source = config.lib.file.mkOutOfStoreSymlink ./zellij/.config/zellij;
-      };
-      ".local/bin/tmux-sessionizer" = {
-        source = config.lib.file.mkOutOfStoreSymlink ./scripts/.local/bin/tmux-sessionizer;
-      };
-      ".wezterm.lua" = {
-        source = config.lib.file.mkOutOfStoreSymlink ./wezterm/.wezterm.lua;
-      };
     };
 
     stateVersion = "24.05";
@@ -74,7 +58,7 @@
     userEmail = "luke@lukepeltier.com";
     userName = "Luke Peltier";
     signing = {
-      key = "/home/lukep/.ssh/id_ed25519.pub";
+      key = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIFtnS35NfuQUYjtWIGg+aZDK5Wsb1hA1t60xf/zMU3pj";
     };
     extraConfig = {
       pull = {rebase = false;};
@@ -83,8 +67,14 @@
       core = {
         editor = "nvim";
         excludesFile = "~/.gitignore";
+        sshCommand = "ssh.exe";
       };
-      gpg = {format = "ssh";};
+      gpg = {
+        format = "ssh";
+        ssh = {
+          program = "/mnt/c/Users/lukep/AppData/Local/1Password/app/8/op-ssh-sign-wsl";
+        };
+      };
       commit = {gpgsign = true;};
       pager = {branch = false;};
       column = {ui = "auto";};
