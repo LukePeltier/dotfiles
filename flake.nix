@@ -26,14 +26,6 @@
             username = "lpeltier";
           };
         };
-        home = home-manager.lib.homeManagerConfiguration {
-          inherit pkgs;
-          modules = [ ./home.nix ];
-          extraSpecialArgs = {
-            username = "lukep";
-          };
-        };
-
       };
     };
 }
