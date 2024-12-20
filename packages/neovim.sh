@@ -2,7 +2,7 @@
 
 # neovim btw
 if [ ! -d $HOME/neovim ]; then
-    git clone https://github.com/neovim/neovim.git $HOME/neovim
+   git clone https://github.com/neovim/neovim.git $HOME/neovim
 fi
 
 sudo apt-get -y install cmake gettext lua5.1 liblua5.1-0-dev
