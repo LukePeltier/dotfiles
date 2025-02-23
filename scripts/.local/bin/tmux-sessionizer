@@ -3,7 +3,7 @@
 if [[ $# -eq 1 ]]; then
    selected=$1
 else
-   selected=$(fd --type d --hidden --full-path '\.git$' ~ | grep -v ".local" | grep -v ".cache" | grep -v ".tmux" | xargs dirname | fzf)
+   selected=$(find ~/ ~/personal ~/Projects -mindepth 1 -maxdepth 1 -type d | fzf)
 fi
 
 if [[ -z $selected ]]; then

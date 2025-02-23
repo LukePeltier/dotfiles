@@ -75,7 +75,7 @@ is_current_session=$(zellij list-sessions -n | grep "^$session_name \[Created" |
 # If we're inside of zellij, detach
 if [[ -n "$ZELLIJ" ]]; then
    if [[ -z "$is_current_session" ]]; then
-      zellij pipe --plugin file:~/.local/share/zellij/plugins/zellij-switch.wasm -- "$session_name::$cwd"
+      zellij pipe --plugin file:~/.local/share/zellij/plugins/zellij-switch.wasm -- "--session $session_name --cwd $cwd --layout luke_custom"
    fi
 else
    if [[ -n "$session" ]]; then
