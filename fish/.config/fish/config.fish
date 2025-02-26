@@ -1,4 +1,11 @@
+eval "$(/opt/homebrew/bin/brew shellenv)"
+
 if status is-interactive
+
+  fish_add_path "$HOME/.local/bin"
+  fish_add_path "$HOME/bin"
+  fish_add_path "/opt/homebrew/opt/curl/bin"
+
   # Commands to run in interactive sessions can go here
   # atuin init fish --disable-up-arrow | source
 
@@ -20,6 +27,7 @@ if status is-interactive
   fish_add_path "$HOME/.zvm/bin"
   fish_add_path "$ZVM_INSTALL"
 end
+
 
 
 

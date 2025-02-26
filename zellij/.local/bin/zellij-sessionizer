@@ -33,9 +33,9 @@ sessions_list(){
 }
 
 project_list(){
-   list=$(find ~/Projects/ ~/personal/ -maxdepth 1 -type d)
+   list=$(find ~/Projects/ ~/personal/ ~/Documents/Projects/ -maxdepth 1 -type d)
    list="$(realpath ~/dotfiles) ${list}"
-   echo $list | tr --truncate-set1 " /" "\n" | awk '{ print "("NR")\t[Directory]\t"$1 }'
+   echo $list | tr " /" "\n" | awk '{ print "("NR")\t[Directory]\t"$1 }'
 }
 
 select_project() {
