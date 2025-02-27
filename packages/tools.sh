@@ -2,7 +2,7 @@
 
 sudo apt-get install bat
 
-cargo install eza fd-find ripgrep git-delta
+cargo install eza fd-find ripgrep git-delta tlrc sleek
 
 git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
 ~/.fzf/install --all
