@@ -8,12 +8,6 @@ export PATH="$PATH:$HOME/neovim/bin"
 export PATH="$PATH:/usr/games"
 export PATH="$PATH:/usr/lib/llvm-18/bin"
 
-# Go Config
-export PATH=$PATH:/usr/local/go/bin
-export GOPATH=$HOME/go
-export PATH=$PATH:$GOPATH/bin
-[[ -s "$HOME/.gvm/scripts/gvm" ]] && source "$HOME/.gvm/scripts/gvm"
-
 
 # Node Config
 export BUN_INSTALL="$HOME/.bun"
