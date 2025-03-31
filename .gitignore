@@ -2,3 +2,12 @@ tmux/.config/tmux/plugins
 .wishlist
 fish/.config/fish/fish_variables
 fish/.config/fish/completions
+fish/.config/fish/functions
+!fish/.config/fish/functions/bat.fish
+!fish/.config/fish/functions/cat.fish
+!fish/.config/fish/functions/fish_greeting.fish
+!fish/.config/fish/functions/fish_user_key_bindings.fish
+!fish/.config/fish/functions/fixit.fish
+!fish/.config/fish/functions/fuck.fish
+!fish/.config/fish/functions/ll.fish
+!fish/.config/fish/functions/ls.fish
