@@ -11,3 +11,4 @@ fish/.config/fish/functions
 !fish/.config/fish/functions/fuck.fish
 !fish/.config/fish/functions/ll.fish
 !fish/.config/fish/functions/ls.fish
+!fish/.config/fish/functions/fisher.fish
