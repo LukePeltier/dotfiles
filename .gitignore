@@ -1,12 +1,12 @@
-tmux/.config/tmux/plugins
-.wishlist
+tmux/.config/tmux/plugins/
+.wishlist/
 
 fish/.config/fish/fish_variables
 
-fish/.config/fish/completions
+fish/.config/fish/completions/
 !fish/.config/fish/completions/.gitkeep
 
-fish/.config/fish/functions
+fish/.config/fish/functions/
 !fish/.config/fish/functions/bat.fish
 !fish/.config/fish/functions/cat.fish
 !fish/.config/fish/functions/fish_greeting.fish
@@ -17,8 +17,14 @@ fish/.config/fish/functions
 !fish/.config/fish/functions/ls.fish
 !fish/.config/fish/functions/fisher.fish
 
-fish/.config/fish/themes
+fish/.config/fish/themes/
 !fish/.config/fish/themes/.gitkeep
 
-fish/.config/fish/conf.d
+fish/.config/fish/conf.d/
 !fish/.config/fish/conf.d/.gitkeep
+!fish/.config/fish/conf.d/rustup.fish
+!fish/.config/fish/conf.d/opam.fish
+!fish/.config/fish/conf.d/mise.fish
+!fish/.config/fish/conf.d/deno.fish
+!fish/.config/fish/conf.d/zvm.fish
+!fish/.config/fish/conf.d/uv.fish
