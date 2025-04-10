@@ -35,6 +35,7 @@ else
    log "Stowing..."
    setup_tmux
    stow env
+   ln -sf ~/dotfiles/tmux-sessionizer/tmux-sessionizer ~/.local/bin/tmux-sessionizer
 fi
 
 log "Done"
