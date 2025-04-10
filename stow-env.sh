@@ -22,8 +22,12 @@ log() {
 }
 
 
-if [[ $dry_run == "0" ]]; then
-   stow env
-else
+if [[ "${dry_run}" == "1" ]]; then
+   log "DRY RUN stow:"
    log "$(stow -nv env)"
+else
+   log "Stowing..."
+   stow env
 fi
+
+log "Done"
