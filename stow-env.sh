@@ -21,12 +21,19 @@ log() {
    fi
 }
 
+setup_tmux() {
+   if [ ! -d ~/.config/tmux/plugins/tpm ]; then
+      mkdir -p ~/.config/tmux/plugins
+      git clone https://github.com/tmux-plugins/tpm ~/.config/tmux/plugins/tpm
+   fi
+}
 
 if [[ "${dry_run}" == "1" ]]; then
    log "DRY RUN stow:"
    log "$(stow -nv env)"
 else
    log "Stowing..."
+   setup_tmux
    stow env
 fi
 
