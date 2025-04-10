@@ -33,7 +33,6 @@ if [[ "${dry_run}" == "1" ]]; then
    log "$(stow -nv env)"
 else
    log "Stowing..."
-   setup_tmux
    stow env
    ln -sf ~/dotfiles/tmux-sessionizer/tmux-sessionizer ~/.local/bin/tmux-sessionizer
 fi

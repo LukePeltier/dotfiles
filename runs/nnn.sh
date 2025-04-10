@@ -6,7 +6,7 @@ sudo apt-get install pkg-config libncursesw5-dev libreadline-dev
 
 git -C $HOME/ThirdParty/nnn fetch --all
 
-git -C ~/neovim checkout v5.1
+git -C $HOME/ThirdParty/nnn checkout v5.1
 
 pushd $HOME/ThirdParty/nnn
 
