@@ -29,3 +29,5 @@ go_version=$(mise exec go -- go version)
 echo "Successfully installed Go: $go_version"
 
 go install github.com/jesseduffield/lazygit@latest
+go install github.com/jesseduffield/lazydocker@latest
+go install github.com/rs/curlie@latest
