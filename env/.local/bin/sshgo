@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+
+host="$1"
+if [[ $host == blr-* ]]; then
+    realhost="msa${host#dev-}.automation.local"
+    shift
+    exec ssh -J blrproxy -A root@"$realhost" "$@"
+else
+    realhost="msa${host}.automation.local"
+    shift
+    exec ssh -J houproxy -A root@"$realhost" "$@"
+fi
