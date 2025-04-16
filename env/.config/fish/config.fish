@@ -5,5 +5,6 @@ if status is-interactive
   fish_add_path "/opt/homebrew/opt/curl/bin"
 
   ssh-add > /dev/null 2>/dev/null
+  set -gx EDITOR nvim
 end
 

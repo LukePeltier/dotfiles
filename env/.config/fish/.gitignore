@@ -13,6 +13,7 @@ fish_variables
 !/functions/ll.fish
 !/functions/ls.fish
 !/functions/fisher.fish
+!/functions/y.fish
 
 /themes/*
 !/themes/.gitkeep
@@ -27,3 +28,4 @@ fish_variables
 !/conf.d/uv.fish
 !/conf.d/zoxide.fish
 !/conf.d/zvm.fish
+!/conf.d/atuin.env.fish

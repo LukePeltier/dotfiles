@@ -1,4 +1,3 @@
 [user]
   name = Luke Peltier
   email = luke.peltier@microchip.com
-  signingkey = /home/lpeltier/.ssh/id_ed25519.pub
