@@ -6,6 +6,6 @@ pushd env/.config/nvim
 git checkout main
 popd
 pushd tmux-sessionizer
-git checkout main
+git checkout master
 popd
 

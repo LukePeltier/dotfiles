@@ -15,5 +15,3 @@ echo "npm version: $NPM_VERSION"
 
 npm install -g pnpm
 
-curl -fsSL https://deno.land/install.sh | sh
-curl -fsSL https://bun.sh/install | bash
