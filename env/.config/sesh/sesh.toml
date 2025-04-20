@@ -7,5 +7,5 @@ startup_command = "ls"
 name = "tmux config"
 path = "~/dotfiles/env/.config/tmux"
 startup_command = "nvim tmux.conf"
-preview_command = "bat --color=always ~/dotfiles/env/.config/tmux/tmux.conf"
+preview_command = "cat --color=always ~/dotfiles/env/.config/tmux/tmux.conf"
 
