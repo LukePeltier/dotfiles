@@ -6,5 +6,6 @@ if status is-interactive
 
   ssh-add > /dev/null 2>/dev/null
   set -gx EDITOR nvim
+  oh-my-posh init fish --config "https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/refs/heads/main/themes/spaceship.omp.json" | source
 end
 

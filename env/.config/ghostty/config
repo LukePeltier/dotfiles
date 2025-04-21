@@ -1,7 +1,6 @@
 # This is the configuration file for Ghostty.
 #
-# This template file has been automatically created at the following
-# path since Ghostty couldn't find any existing config files on your system:
+# This template file has been automatically created at the following path since Ghostty couldn't find any existing config files on your system:
 #
 #   /home/luke/.config/ghostty/config
 #
@@ -43,3 +42,11 @@
 # resize-overlay-duration = 4s 200ms
 theme = Kanagawa Wave
 font-family = Hack Nerd Font
+shell-integration-features = sudo
+background-opacity=0.8
+background-blur=true
+window-decoration=none
+
+# custom-shader = /home/luke/src/ghostty_shaders/crt-shader-with-chromatic-aberration-glow-scanlines-dot-matrix/crt-shader-with-chromatic-aberration-glow-scanlines-dot-matrix.glsl
+# custom-shader = /home/luke/src/ghostty_shaders/ghostty-shaders/in-game-crt.glsl
+# custom-shader = /home/luke/src/ghostty_shaders/ghostty-shaders/bettercrt.glsl
