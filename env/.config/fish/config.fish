@@ -6,6 +6,6 @@ if status is-interactive
 
   ssh-add > /dev/null 2>/dev/null
   set -gx EDITOR nvim
-  oh-my-posh init fish --config "$HOME/.config/ohmyposh/custom.omp.json" | source
+  starship init fish | source
 end
 
