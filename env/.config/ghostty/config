@@ -43,9 +43,9 @@
 theme = Kanagawa Wave
 font-family = Hack Nerd Font
 shell-integration-features = sudo
-background-opacity=0.8
-background-blur=true
-window-decoration=none
+# background-opacity=0.8
+# background-blur=true
+# window-decoration=none
 
 # custom-shader = /home/luke/src/ghostty_shaders/crt-shader-with-chromatic-aberration-glow-scanlines-dot-matrix/crt-shader-with-chromatic-aberration-glow-scanlines-dot-matrix.glsl
 # custom-shader = /home/luke/src/ghostty_shaders/ghostty-shaders/in-game-crt.glsl
