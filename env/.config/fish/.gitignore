@@ -29,3 +29,4 @@ fish_variables
 !/conf.d/zoxide.fish
 !/conf.d/zvm.fish
 !/conf.d/atuin.env.fish
+!/conf.d/nix.fish
