@@ -1,11 +1,12 @@
 #!/usr/bin/env bash
 
-sudo apt-get install unzip curl git build-essential stow
-curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
-sudo snap install zig --classic --beta
-curl -LsSf https://astral.sh/uv/install.sh | sh
+# sudo apt-get install unzip curl git build-essential stow
+# curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+# sudo snap install zig --classic --beta
+paru -S --no-confirm zig-bin
+# curl -LsSf https://astral.sh/uv/install.sh | sh
 
-sudo apt-get install bat
+sudo paru -S --no-confirm bat
 
 cargo install eza fd-find ripgrep git-delta tlrc sleek
 
