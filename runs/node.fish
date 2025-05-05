@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/usr/bin/env fish
 
 mise install nodejs@latest
 
@@ -6,11 +6,11 @@ mise install nodejs@latest
 mise use -g nodejs@latest
 
 # Verify the installation
-NODE_VERSION=$(mise exec nodejs -- node --version)
+set NODE_VERSION $(mise exec nodejs -- node --version)
 echo "Successfully installed Node.js $NODE_VERSION"
 
 # Show available npm version
-NPM_VERSION=$(mise exec nodejs -- npm --version)
+set NPM_VERSION $(mise exec nodejs -- npm --version)
 echo "npm version: $NPM_VERSION"
 
 npm install -g pnpm

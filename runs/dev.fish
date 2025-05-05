@@ -1,14 +1,11 @@
-#!/usr/bin/env bash
+#!/usr/bin/env fish
 
-# sudo apt-get install unzip curl git build-essential stow
-# curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
-# sudo snap install zig --classic --beta
+paru -S --noconfirm --needed unzip curl git base-devel stow go
+curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 paru -S --no-confirm zig-bin
-# curl -LsSf https://astral.sh/uv/install.sh | sh
+curl -LsSf https://astral.sh/uv/install.sh | sh
 
-sudo paru -S --no-confirm bat
-
-cargo install eza fd-find ripgrep git-delta tlrc sleek
+sudo paru -S --noconfirm bat eza fd ripgrep git-delta tlrc 
 
 git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
 ~/.fzf/install --all
@@ -26,7 +23,7 @@ echo "Setting latest Go version as default..."
 mise use -g go@latest
 
 # Verify the installation
-go_version=$(mise exec go -- go version)
+set go_version $(mise exec go -- go version)
 echo "Successfully installed Go: $go_version"
 
 go install github.com/jesseduffield/lazygit@latest
