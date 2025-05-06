@@ -11,7 +11,9 @@
     ],
     "modules-left": [
         "hyprland/workspaces",
-        "hyprland/window"
+        "hyprland/window",
+        "gamemode",
+        "privacy"
     ],
     "modules-center": [
         "clock"
@@ -21,7 +23,7 @@
         "cpu",
         "memory",
         "tray",
-        "custom/notification",
+        "idle_inhibitor",
         "custom/exit"
     ]
 }
