@@ -39,8 +39,8 @@ sleep $_sleep1
 
 # Start xdg-desktop-portal-gtk
 if [ -f /usr/lib/xdg-desktop-portal-gtk ]; then
-    /usr/lib/xdg-desktop-portal-gtk &
-    sleep $_sleep1
+   /usr/lib/xdg-desktop-portal-gtk &
+   sleep $_sleep1
 fi
 
 # Start xdg-desktop-portal
