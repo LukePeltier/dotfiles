@@ -6,7 +6,8 @@
 }
 
 window#waybar {
-    background: #1a1b26;
+    /* background: #1a1b26; */
+    background: transparent;
     /* main window transparent background */
 }
 
