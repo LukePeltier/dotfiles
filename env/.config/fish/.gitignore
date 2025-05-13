@@ -30,3 +30,4 @@ fish_variables
 !/conf.d/zvm.fish
 !/conf.d/atuin.env.fish
 !/conf.d/nix.fish
+!/conf.d/wayland.fish
