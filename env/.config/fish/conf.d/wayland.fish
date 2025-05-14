@@ -1,10 +1,8 @@
 # XDG Desktop Portal
-set -gx XDG_CURRENT_DESKTOP Hyprland
 set -gx XDG_SESSION_TYPE wayland
-set -gx XDG_SESSION_DESKTOP Hyprland
 
 # QT
-set -gx QT_QPA_PLATFORM wayland;xcb
+set -gx QT_QPA_PLATFORM "wayland;xcb"
 set -gx QT_QPA_PLATFORMTHEME qt6ct
 set -gx QT_QPA_PLATFORMTHEME qt5ct
 set -gx QT_WAYLAND_DISABLE_WINDOWDECORATION 1
