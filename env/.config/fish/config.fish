@@ -15,6 +15,7 @@ if status is-interactive
 
   ssh-add > /dev/null 2>/dev/null
   set -gx EDITOR nvim
+  set -gx MANPAGER "nvim -c 'Man!' -"
   starship init fish | source
 end
 

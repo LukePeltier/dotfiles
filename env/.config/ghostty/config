@@ -43,7 +43,7 @@
 theme = tokyonight
 font-family = JetBrains Mono Nerd Font
 shell-integration-features = sudo
-background-opacity=0.7
+background-opacity=0.8
 background-blur=true
 # window-decoration=none
 
