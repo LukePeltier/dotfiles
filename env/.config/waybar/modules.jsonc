@@ -19,7 +19,7 @@
     // Hyprland Window
     "hyprland/window": {
         "rewrite": {
-            "(.*) - Brave": "$1",
+            "(.*) - Zen Browser": "$1",
             "(.*) - Chromium": "$1",
             "(.*) - Brave Search": "$1",
             "(.*) - Outlook": "$1",
@@ -43,9 +43,7 @@
     "clock": {
         "interval": 1,
         // "timezone": "America/New_York",
-        "format": "{:%Y.%m.%d %I:%M %p}",
-        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
-        "format-alt": "{:%Y-%m-%d}"
+        "format": "{:%Y.%m.%d %I:%M:%S %p}"
     },
     // CPU
     "cpu": {
@@ -94,18 +92,6 @@
             "deactivated": ""
         },
         "on-click-right": "hyprlock"
-    },
-    "gamemode": {
-        "format": "{glyph}",
-        "format-alt": "{glyph} {count}",
-        "glyph": "",
-        "hide-not-running": true,
-        "use-icon": true,
-        "icon-name": "input-gaming-symbolic",
-        "icon-spacing": 4,
-        "icon-size": 20,
-        "tooltip": true,
-        "tooltip-format": "Games running: {count}"
     },
     "privacy": {
         "icon-spacing": 4,

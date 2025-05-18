@@ -12,14 +12,12 @@
     "modules-left": [
         "hyprland/workspaces",
         "hyprland/window",
-        "gamemode",
         "privacy"
     ],
     "modules-center": [
         "clock"
     ],
     "modules-right": [
-        "pulseaudio",
         "cpu",
         "memory",
         "tray",
