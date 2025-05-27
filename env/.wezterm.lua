@@ -1,53 +1,39 @@
 local wezterm = require("wezterm")
+-- Some empty tables for later use
+local launch_menu = {}
 
-return {
-	front_end = "WebGpu",
-	color_scheme = "Catppuccin Mocha",
-	font_size = 12.0,
-	font = wezterm.font_with_fallback({ "SF Mono", "Symbols Nerd Font" }),
-	unicode_version = 13,
-	window_close_confirmation = "NeverPrompt",
-	default_domain = "WSL:Ubuntu-24.04",
-	leader = { key = "a", mods = "CTRL" },
-	hide_tab_bar_if_only_one_tab = false,
-	use_fancy_tab_bar = false,
-	show_tab_index_in_tab_bar = false,
-	switch_to_last_active_tab_when_closing_tab = true,
-	enable_scroll_bar = true,
-	tab_max_width = 32,
-	tab_bar_at_bottom = false,
-	keys = {
-		{ key = "a", mods = "LEADER|CTRL", action = wezterm.action({ SendString = "\x01" }) },
-		{ key = "-", mods = "LEADER", action = wezterm.action({ SplitVertical = { domain = "CurrentPaneDomain" } }) },
-		{
-			key = "\\",
-			mods = "LEADER",
-			action = wezterm.action({ SplitHorizontal = { domain = "CurrentPaneDomain" } }),
+if wezterm.target_triple == "x86_64-pc-windows-msvc" then
+	--- Grab the ver info for later use.
+	table.insert(launch_menu, {
+		label = "PowerShell",
+		args = {
+			"pwsh.exe",
+			"-NoLogo",
 		},
-		{ key = "s", mods = "LEADER", action = wezterm.action({ SplitVertical = { domain = "CurrentPaneDomain" } }) },
-		{ key = "v", mods = "LEADER", action = wezterm.action({ SplitHorizontal = { domain = "CurrentPaneDomain" } }) },
-		{ key = "o", mods = "LEADER", action = "TogglePaneZoomState" },
-		{ key = "z", mods = "LEADER", action = "TogglePaneZoomState" },
-		{ key = "c", mods = "LEADER", action = wezterm.action({ SpawnTab = "CurrentPaneDomain" }) },
-		{ key = "h", mods = "LEADER", action = wezterm.action({ ActivatePaneDirection = "Left" }) },
-		{ key = "j", mods = "LEADER", action = wezterm.action({ ActivatePaneDirection = "Down" }) },
-		{ key = "k", mods = "LEADER", action = wezterm.action({ ActivatePaneDirection = "Up" }) },
-		{ key = "l", mods = "LEADER", action = wezterm.action({ ActivatePaneDirection = "Right" }) },
-		{ key = "H", mods = "LEADER|SHIFT", action = wezterm.action({ AdjustPaneSize = { "Left", 5 } }) },
-		{ key = "J", mods = "LEADER|SHIFT", action = wezterm.action({ AdjustPaneSize = { "Down", 5 } }) },
-		{ key = "K", mods = "LEADER|SHIFT", action = wezterm.action({ AdjustPaneSize = { "Up", 5 } }) },
-		{ key = "L", mods = "LEADER|SHIFT", action = wezterm.action({ AdjustPaneSize = { "Right", 5 } }) },
-		{ key = "1", mods = "LEADER", action = wezterm.action({ ActivateTab = 0 }) },
-		{ key = "2", mods = "LEADER", action = wezterm.action({ ActivateTab = 1 }) },
-		{ key = "3", mods = "LEADER", action = wezterm.action({ ActivateTab = 2 }) },
-		{ key = "4", mods = "LEADER", action = wezterm.action({ ActivateTab = 3 }) },
-		{ key = "5", mods = "LEADER", action = wezterm.action({ ActivateTab = 4 }) },
-		{ key = "6", mods = "LEADER", action = wezterm.action({ ActivateTab = 5 }) },
-		{ key = "7", mods = "LEADER", action = wezterm.action({ ActivateTab = 6 }) },
-		{ key = "8", mods = "LEADER", action = wezterm.action({ ActivateTab = 7 }) },
-		{ key = "9", mods = "LEADER", action = wezterm.action({ ActivateTab = 8 }) },
-		{ key = "&", mods = "LEADER|SHIFT", action = wezterm.action({ CloseCurrentTab = { confirm = true } }) },
-		{ key = "d", mods = "LEADER", action = wezterm.action({ CloseCurrentPane = { confirm = true } }) },
-		{ key = "x", mods = "LEADER", action = wezterm.action({ CloseCurrentPane = { confirm = true } }) },
-	},
+		domain = { DomainName = "local" },
+	})
+end
+
+local config = {
+	launch_menu = launch_menu,
+	automatically_reload_config = true,
+	window_close_confirmation = "NeverPrompt",
+	default_cursor_style = "SteadyBlock",
+	color_scheme_dirs = { "C:\\Users\\C2184\\.config\\wezterm\\colors" },
+	color_scheme = "tokyonight_night",
+	font_size = 12.0,
+	font = wezterm.font_with_fallback({ "JetBrainsMono Nerd Font", "Symbols Nerd Font" }),
+	unicode_version = 13,
+	leader = { key = "a", mods = "CTRL" },
+	switch_to_last_active_tab_when_closing_tab = true,
+	enable_kitty_graphics = true,
+	use_fancy_tab_bar = false,
+	hide_tab_bar_if_only_one_tab = true,
 }
+
+if wezterm.target_triple == "x86_64-pc-windows-msvc" then
+	config.default_domain = "WSL:archlinux"
+	config.default_prog = { "pwsh.exe", "-NoLogo" }
+end
+
+return config
