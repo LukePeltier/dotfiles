@@ -14,10 +14,16 @@
         },
         "persistent-workspaces": {
             "DP-1": [
-                1
+                1,
+                2,
+                3,
+                4
             ],
-            "DP-3": [
-                2
+            "DP-2": [
+                1,
+                2,
+                3,
+                4
             ]
         }
     },
@@ -41,11 +47,13 @@
     "clock": {
         "interval": 1,
         // "timezone": "America/New_York",
-        "format": "{:%Y.%m.%d %I:%M:%S %p}"
+        "format": "{:%I:%M:%S %p}",
+        "tooltip": true,
+        "tooltip-format": "{:%Y-%m-%d}"
     },
     // CPU
     "cpu": {
-        "interval": 5,
+        "interval": 2,
         "format": "\uf4bc {usage}%",
         "max-length": 10
     },
