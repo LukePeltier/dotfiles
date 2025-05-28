@@ -41,10 +41,10 @@
 # # Just for example:
 # resize-overlay-duration = 4s 200ms
 theme = tokyonight
-font-family = JetBrains Mono Nerd Font
+font-family = JetBrainsMono Nerd Font Mono
 shell-integration-features = sudo
-background-opacity=0.8
-background-blur=true
+# background-opacity=0.8
+# background-blur=true
 # window-decoration=none
 
 # custom-shader = /home/luke/src/ghostty_shaders/crt-shader-with-chromatic-aberration-glow-scanlines-dot-matrix/crt-shader-with-chromatic-aberration-glow-scanlines-dot-matrix.glsl
