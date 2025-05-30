@@ -18,7 +18,8 @@
         "clock"
     ],
     "modules-right": [
-        "network",
+        "custom/weather",
+        // "network",
         "cpu",
         "memory",
         "tray",

@@ -121,5 +121,9 @@
         "format-ethernet": "",
         "format-disconnected": "Not connected", //An empty format will hide the module.
         "max-length": 50
+    },
+    "custom/weather": {
+        "exec": "curl \"wttr.in/Tomball?format=1\"",
+        "interval": 1800
     }
 }
