@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xbel version="1.0"
+      xmlns:bookmark="http://www.freedesktop.org/standards/desktop-bookmarks"
+      xmlns:mime="http://www.freedesktop.org/standards/shared-mime-info"
+>
+  <bookmark href="smb://192.168.4.11/media/" added="2025-05-31T15:55:09.951314Z" modified="2025-05-31T15:55:09.951320Z" visited="2025-05-31T15:55:09.951314Z">
+    <title>media on 192.168.4.11</title>
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <bookmark:applications>
+          <bookmark:application name="org.gnome.Nautilus" exec="&apos;org.gnome.Nautilus %u&apos;" modified="2025-05-31T15:55:09.951319Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="smb://holocron.home.lukepeltier.com/file_share/" added="2025-05-31T15:56:30.188696Z" modified="2025-05-31T15:56:30.188698Z" visited="2025-05-31T15:56:30.188696Z">
+    <title>file_share on holocron.home.lukepeltier.com</title>
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <bookmark:applications>
+          <bookmark:application name="org.gnome.Nautilus" exec="&apos;org.gnome.Nautilus %u&apos;" modified="2025-05-31T15:56:30.188697Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="smb://192.168.4.11/jellyfin_config/" added="2025-05-31T17:38:46.260490Z" modified="2025-05-31T17:38:46.260492Z" visited="2025-05-31T17:38:46.260491Z">
+    <title>jellyfin_config on 192.168.4.11</title>
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <bookmark:applications>
+          <bookmark:application name="org.gnome.Nautilus" exec="&apos;org.gnome.Nautilus %u&apos;" modified="2025-05-31T17:38:46.260491Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="smb://192.168.4.3/docker/" added="2025-05-31T17:39:39.203047Z" modified="2025-05-31T17:39:39.203050Z" visited="2025-05-31T17:39:39.203047Z">
+    <title>docker on 192.168.4.3</title>
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <bookmark:applications>
+          <bookmark:application name="org.gnome.Nautilus" exec="&apos;org.gnome.Nautilus %u&apos;" modified="2025-05-31T17:39:39.203048Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+</xbel>
