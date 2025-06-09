@@ -2,7 +2,7 @@
 
 host="$1"
 if [[ $host == blr-* ]]; then
-   realhost="msa${host#dev-}.automation.local"
+   realhost="msa${host#blr-}.automation.local"
    shift
    exec ssh -J blrproxy -A root@"$realhost" "$@"
 else
