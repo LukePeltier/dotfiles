@@ -4,9 +4,9 @@ host="$1"
 if [[ $host == blr-* ]]; then
    realhost="msa${host#blr-}.automation.local"
    shift
-   exec ssh -J blrproxy -A root@"$realhost" "$@"
+   exec ssh -J blrproxy -o "StrictHostKeyChecking no" root@"$realhost" "$@"
 else
    realhost="msa${host}.automation.local"
    shift
-   exec ssh -J houproxy -A root@"$realhost" "$@"
+   exec ssh -J houproxy -o "StrictHostKeyChecking no" root@"$realhost" "$@"
 fi
