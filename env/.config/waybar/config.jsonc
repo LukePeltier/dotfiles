@@ -23,6 +23,7 @@
         "cpu",
         "memory",
         "tray",
+        "idle_inhibitor",
         "custom/exit"
     ]
 }
