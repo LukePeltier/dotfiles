@@ -6,7 +6,7 @@
 }
 {
     "label" : "logout",
-    "action" : "uwsm stop",
+    "action" : "loginctl terminate-user ''",
     "text" : "Log Out",
     "keybind" : "e"
 }
