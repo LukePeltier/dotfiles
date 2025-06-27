@@ -6,13 +6,13 @@
 }
 {
     "label" : "logout",
-    "action" : "loginctl terminate-user ''",
+    "action" : "uwsm stop",
     "text" : "Log Out",
     "keybind" : "e"
 }
 {
     "label" : "reboot",
-    "action" : "reboot",
+    "action" : "systemctl reboot",
     "text" : "Restart",
     "keybind" : "r"
 }
