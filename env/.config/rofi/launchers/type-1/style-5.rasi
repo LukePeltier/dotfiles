@@ -17,6 +17,7 @@ configuration {
     display-window:             "";
     drun-display-format:        "{name}";
     window-format:              "{w} · {c} · {t}";
+    run-command:                 "uwsm app -- {cmd}";
 }
 
 /*****----- Global Properties -----*****/

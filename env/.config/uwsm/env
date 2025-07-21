@@ -1,36 +1,22 @@
+
+# Set the cursor size for xcursor
+export XCURSOR_SIZE=24
+export HYPRCURSOR_SIZE=24
+
 # XDG Desktop Portal
 export XDG_CURRENT_DESKTOP=Hyprland
 export XDG_SESSION_TYPE=wayland
 export XDG_SESSION_DESKTOP=Hyprland
 export XDG_MENU_PREFIX=arch-
 
-# QT
-export QT_QPA_PLATFORM=wayland;xcb
-export QT_QPA_PLATFORMTHEME=qt5ct
-export QT_WAYLAND_DISABLE_WINDOWDECORATION=1
-export QT_AUTO_SCREEN_SCALE_FACTOR=1
-export QT_STYLE_OVERRIDE=kvantum
-
-# GDK
-export GDK_SCALE=1
-
-# Toolkit Backend
 export GDK_BACKEND=wayland,x11
-export CLUTTER_BACKEND=wayland
-
-# Mozilla
+export QT_QPA_PLATFORM=wayland
+export QT_STYLE_OVERRIDE=kvantum
+export SDL_VIDEODRIVER=wayland
 export MOZ_ENABLE_WAYLAND=1
-
-# Set the cursor size for xcursor
-export XCURSOR_SIZE=24
-
 export ELECTRON_OZONE_PLATFORM_HINT=wayland
+export OZONE_PLATFORM=wayland
 
-# FOR VM and POSSIBLY NVIDIA
-export WLR_NO_HARDWARE_CURSORS=1 # On hyprland >v0.41, now configured on variable cursor section
-export WLR_RENDERER_ALLOW_SOFTWARE=1
+# Use XCompose file
+export XCOMPOSEFILE=$HOME/.XCompose
 
-# nvidia firefox (for hardware acceleration on FF)?
-# check this post https://github.com/elFarto/nvidia-vaapi-driver#configuration
-export MOZ_DISABLE_RDD_SANDBOX=1
-export EGL_PLATFORM=wayland

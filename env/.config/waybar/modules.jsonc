@@ -3,7 +3,9 @@
     "hyprland/workspaces": {
         "on-click": "activate",
         "active-only": false,
-        "all-outputs": true,
+        "all-outputs": false,
+        "show-special": true,
+        "special-visible-only": true,
         "format": "{icon}{name}",
         "format-icons": {
             "1": " ",
@@ -13,13 +15,7 @@
             "default": ""
         },
         "persistent-workspaces": {
-            "DP-1": [
-                1,
-                2,
-                3,
-                4
-            ],
-            "DP-2": [
+            "*": [
                 1,
                 2,
                 3,
@@ -41,7 +37,10 @@
     // System tray
     "tray": {
         "icon-size": 15,
-        "spacing": 10
+        "spacing": 10,
+        "icons": {
+            "blueman": "bluetooth"
+        }
     },
     // Clock
     "clock": {
