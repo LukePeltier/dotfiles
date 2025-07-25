@@ -34,21 +34,33 @@
         "on-click": "/home/luke/.config/wlogout/launch.sh",
         "tooltip": false
     },
+    // "group/tray-expander": {
+    //     "orientation": "inherit",
+    //     "drawer": {
+    //         "transition-duration": 600,
+    //         "children-class": "tray-group-item"
+    //     },
+    //     "modules": [
+    //         "custom/expand-icon",
+    //         "tray"
+    //     ]
+    // },
+    "custom/expand-icon": {
+        "format": " ",
+        "tooltip": false
+    },
     // System tray
     "tray": {
         "icon-size": 15,
-        "spacing": 10,
-        "icons": {
-            "blueman": "bluetooth"
-        }
+        "spacing": 10
     },
     // Clock
     "clock": {
         "interval": 1,
         // "timezone": "America/New_York",
-        "format": "{:%I:%M:%S %p}",
-        "tooltip": true,
-        "tooltip-format": "{:%Y-%m-%d}"
+        "format": "{:%A %I:%M:%S %p}",
+        "format-alt": "{:%d %B W%V %Y}",
+        "tooltip": false
     },
     // CPU
     "cpu": {

@@ -18,11 +18,11 @@
         "clock"
     ],
     "modules-right": [
+        "tray",
         "custom/weather",
         // "network",
         "cpu",
         "memory",
-        "tray",
         "idle_inhibitor",
         "custom/exit"
     ]
