@@ -57,7 +57,6 @@
     // Clock
     "clock": {
         "interval": 1,
-        // "timezone": "America/New_York",
         "format": "{:%A %I:%M:%S %p}",
         "format-alt": "{:%d %B W%V %Y}",
         "tooltip": false
