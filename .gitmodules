@@ -1,4 +1,0 @@
-[submodule "tmux-sessionizer"]
-	path = tmux-sessionizer
-	url = git@github.com:LukePeltier/tmux-sessionizer.git
-
