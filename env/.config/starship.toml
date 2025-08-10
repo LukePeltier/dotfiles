@@ -179,7 +179,7 @@ symbol = " "
 # custom module for jj status
 [custom.jj]
 description = "The current jj status"
-detect_folders = [".jj"]
+when = "jj --ignore-working-copy root"
 shell = ["sh", "--norc", "--noprofile"]
 symbol = "🥋 "
 command = '''
