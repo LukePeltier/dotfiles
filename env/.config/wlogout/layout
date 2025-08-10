@@ -5,20 +5,20 @@
     "keybind" : "l"
 }
 {
-    "label" : "logout",
-    "action" : "uwsm stop",
-    "text" : "Log Out",
-    "keybind" : "e"
-}
-{
     "label" : "reboot",
     "action" : "systemctl reboot",
     "text" : "Restart",
     "keybind" : "r"
 }
 {
+    "label" : "logout",
+    "action" : "uwsm stop",
+    "text" : "Log Out",
+    "keybind" : "e"
+}
+{
     "label" : "shutdown",
-    "action" : "poweroff",
+    "action" : "systemctl poweroff",
     "text" : "Power Off",
     "keybind" : "s"
 }

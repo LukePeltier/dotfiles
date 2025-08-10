@@ -1,51 +1,315 @@
-@import "../omarchy/current/theme/waybar.css";
+@import './colors.css';
 
+/* ======================= */
+/* Global Styles           */
+/* ======================= */
 * {
-  font-family: CaskaydiaMono Nerd Font Propo;
-  font-size: 12px;
-  min-height: 0;
+    border: none;
+    font-family: "JetBrainsMono Nerd Font";
+    font-size: 12px;
+    box-shadow: none;
+    min-height: 28px;
 }
 
 window#waybar {
-  background: @background
+    background: transparent;
 }
 
-.modules-left {
-  margin-left: 8px;
+/* ======================= */
+/* Interactive States      */
+/* ======================= */
+#custom-power:hover {
+    opacity: 0.8;
 }
 
-.modules-right {
-  margin-right: 8px;
+/* ======================= */
+/* Workspace Management    */
+/* ======================= */
+#workspaces {
+    margin: 0;
+    padding: 0;
 }
 
 #workspaces button {
-  all: initial;
-  padding: 0 6px;
-  margin: 0 1.5px;
-  min-width: 9px;
+    color: @color1;
+    padding: 0 8px;
+    margin: 0 4px;
+    /* border: solid 2px transparent; */
+    border-radius: 8px;
 }
 
-#workspaces button.empty {
-  opacity: 0.5;
+#workspaces button.active {
+    color: @foreground;
+    /* border: solid 2px @foreground; */
+    background: rgba(255, 255, 255, 0.1);
 }
 
-#tray,
-#cpu,
-#battery,
-#network,
-#bluetooth,
-#pulseaudio,
-#clock,
-#custom-omarchy {
-  min-width: 12px;
-  margin: 0 7.5px;
-  color: @foreground;
+@keyframes urgent-pulse {
+    0% {
+        opacity: 0.5;
+    }
+
+    100% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0.5;
+    }
 }
 
-#custom-expand-icon {
-  margin-right: 12px;
+/* ======================= */
+/* System Components       */
+/* ======================= */
+#clock {
+    padding: 0 12px;
+    margin: 0 4px;
+    /* border: solid 2px @foreground; */
+    border-radius: 8px;
+    color: @foreground;
+    background: rgba(255, 255, 255, 0.1);
+    font-weight: 500;
 }
 
-tooltip {
-  padding: 2px;
+
+#mpris {
+    color: @foreground;
+    padding: 0 12px;
+    margin: 0 4px;
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.1);
+}
+
+#mpris.playing {
+    color: #8ec07c;
+    background: rgba(255, 255, 255, 0.1);
+}
+
+#mpris.paused {
+    color: #d79921;
+    background: rgba(255, 255, 255, 0.1);
+}
+
+#mpris.stopped {
+    color: #cc241d;
+    background: rgba(255, 255, 255, 0.1);
+}
+
+#cpu {
+    color: @color14;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 0 12px;
+    margin: 0 4px;
+    border-radius: 8px;
+}
+
+#memory {
+    color: @color14;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 0 12px;
+    margin: 0 4px;
+    border-radius: 8px;
+}
+
+/* ======================= */
+/* System Indicators       */
+/* ======================= */
+#tray {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 0 12px;
+    margin: 0 4px;
+    /* border: solid 2px @foreground; */
+    border-radius: 8px;
+}
+
+#privacy {
+    background: rgba(255, 255, 0, 0.1);
+    padding: 0 12px;
+    margin: 0 4px;
+    /* border: solid 2px #d79921; */
+    border-radius: 8px;
+}
+
+#privacy-item {
+    color: #d79921;
+}
+
+/* ======================= */
+/* Menu                    */
+/* ======================= */
+
+tooltip class {
+    color: @textcolor;
+}
+
+/* ======================= */
+/* Network & Bluetooth     */
+/* ======================= */
+#network {
+    color: @foreground;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 0 12px;
+    margin: 0 4px;
+    /* border: solid 2px @foreground; */
+    border-radius: 8px;
+}
+
+#bluetooth {
+    color: @foreground;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 0 12px;
+    margin: 0 4px;
+    /* border: solid 2px @foreground; */
+    border-radius: 8px;
+}
+
+#network.disabled {
+    color: #cc241d;
+    /* border: solid 2px #cc241d; */
+    background: rgba(255, 0, 0, 0.1);
+}
+
+#bluetooth.disabled {
+    color: #458588;
+    /* border: solid 2px #458588; */
+    background: rgba(0, 0, 255, 0.1);
+}
+
+/* ======================= */
+/* Audio Controls          */
+/* ======================= */
+
+#pulseaudio {
+    color: @foreground;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 0 12px;
+    margin: 0 4px;
+    /* border: solid 2px @foreground; */
+    border-radius: 8px;
+}
+
+#pulseaudio.sink-muted {
+    color: #d79921;
+    /* border: solid 2px #d79921; */
+    background: rgba(255, 255, 0, 0.1);
+}
+
+#pulseaudio.microphone {
+    color: @foreground;
+    /* border: solid 2px @foreground; */
+    background: rgba(255, 255, 255, 0.1);
+}
+
+#pulseaudio.microphone.source-muted {
+    color: #cc241d;
+    /* border: solid 2px #cc241d; */
+    background: rgba(255, 0, 0, 0.1);
+}
+
+#pulseaudio-slider {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 0 12px;
+    margin: 0 4px;
+    border-radius: 8px;
+}
+
+#pulseaudio-slider slider {
+    min-height: 0px;
+    min-width: 0px;
+    background: transparent;
+    box-shadow: none;
+}
+
+#pulseaudio-slider trough {
+    min-height: 8px;
+    min-width: 100px;
+    border-radius: 4px;
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+#pulseaudio-slider highlight {
+    min-width: 8px;
+    min-height: 8px;
+    border-radius: 4px;
+    background: @color6;
+}
+
+/* ======================= */
+/* Hardware Controls       */
+/* ======================= */
+#backlight {
+    color: @foreground;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 0 12px;
+    margin: 0 4px;
+    /* border: solid 2px @foreground; */
+    border-radius: 8px;
+}
+
+#backlight-slider {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 0 12px;
+    margin: 0 4px;
+    border-radius: 8px;
+}
+
+#backlight-slider slider {
+    min-height: 0px;
+    min-width: 0px;
+    background: transparent;
+    box-shadow: none;
+}
+
+#backlight-slider trough {
+    min-height: 8px;
+    min-width: 100px;
+    border-radius: 4px;
+    background: rgba(255, 255, 255, 0.2);
+}
+
+#backlight-slider highlight {
+    min-width: 8px;
+    min-height: 8px;
+    border-radius: 4px;
+    background: @color9;
+}
+
+/* ======================= */
+/* Battery                 */
+/* ======================= */
+#battery {
+    color: @foreground;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 0 12px;
+    margin: 0 4px;
+    /* border: solid 2px @foreground; */
+    border-radius: 8px;
+}
+
+#battery.charging {
+    color: #8ec07c;
+    /* border: solid 2px #8ec07c; */
+}
+
+#battery.warning {
+    color: #d79921;
+    /* border: solid 2px #d79921; */
+}
+
+#battery.critical,
+#battery.plugordie {
+    color: #cc241d;
+    /* border: solid 2px #cc241d; */
+}
+
+/* ======================= */
+/* Power Menu              */
+/* ======================= */
+#custom-power {
+    color: @foreground;
+    background: rgba(255, 255, 255, 0.1);
+    margin: 0 4px;
+    padding: 0 12px;
+    /* border: solid 2px @foreground; */
+    border-radius: 8px;
 }
