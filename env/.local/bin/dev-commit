@@ -11,9 +11,3 @@ git add .
 git commit -m 'automated dev commit'
 git push
 popd
-
-pushd ~/dotfiles
-git add .
-git commit -m 'automated dev commit'
-git push
-popd
