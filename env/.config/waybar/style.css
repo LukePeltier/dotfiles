@@ -1,14 +1,13 @@
 @import "../omarchy/current/theme/waybar.css";
 
 * {
-  background-color: @background;
-  color: @foreground;
-
-  border: none;
-  border-radius: 0;
-  min-height: 0;
   font-family: CaskaydiaMono Nerd Font Propo;
   font-size: 12px;
+  min-height: 0;
+}
+
+window#waybar {
+  background: @background
 }
 
 .modules-left {
@@ -40,6 +39,7 @@
 #custom-omarchy {
   min-width: 12px;
   margin: 0 7.5px;
+  color: @foreground;
 }
 
 #custom-expand-icon {
