@@ -15,6 +15,7 @@
     "tray",
     "cpu",
     "memory",
+    "idle_inhibitor",
     "custom/power"
   ],
   "hyprland/workspaces": {
@@ -45,8 +46,8 @@
     "on-click": "swaync-client -op"
   },
   "mpris": {
-    "format": "{player_icon} {status_icon}",
-    "format-paused": "{player_icon} {status_icon}",
+    "format": "{player_icon}  {status_icon}",
+    "format-paused": "{player_icon}  {status_icon}",
     "status-icons": {
       "playing": "󰐊",
       "paused": "󰏤",
@@ -98,5 +99,13 @@
     "format": " ",
     "on-click": "wlogout --protocol layer-shell -b 2",
     "tooltip": false
+  },
+  "idle_inhibitor": {
+    "format": "{icon}",
+    "format-icons": {
+      "activated": " ",
+      "deactivated": " "
+    },
+    "timeout": 30.5
   }
 }

@@ -305,7 +305,8 @@ tooltip class {
 /* ======================= */
 /* Power Menu              */
 /* ======================= */
-#custom-power {
+#custom-power,
+#idle_inhibitor {
     color: @foreground;
     background: rgba(255, 255, 255, 0.1);
     margin: 0 4px;
