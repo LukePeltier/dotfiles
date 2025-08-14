@@ -209,12 +209,14 @@ jj log --revisions @ --no-graph --ignore-working-copy --color always --limit 1 -
 
 [custom.git_commit]
 when = "! jj --ignore-working-copy root"
+shell = ["sh", "--norc", "--noprofile"]
 command = "starship module git_commit"
 style = ""
 description = "Only show git_commit if we're not in a jj repo"
 
 [custom.git_branch]
 when = "! jj --ignore-working-copy root"
+shell = ["sh", "--norc", "--noprofile"]
 command = "starship module git_branch"
 description = "Only show git_branch if we're not in a jj repo"
 style = ""
