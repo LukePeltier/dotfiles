@@ -12,6 +12,7 @@ color_space = "lab"
 # harddark - harddark16 - harddarkcomp - harddarkcomp16
 # softdark - softdark16 - softdarkcomp - softdarkcomp16
 # softlight - softlight16 - softlightcomp - softlightcomp16
+palette = "dark"
 
 # Ensures a "readable contrast" (OPTIONAL, disabled by default)
 # Should only be enabled when you notice an unreadable contrast frequently happening
@@ -43,4 +44,4 @@ gtk3 = { src = 'gtk.css', dst = '~/.config/gtk-3.0/colors.css' }
 
 gtk4 = { src = 'gtk.css', dst = '~/.config/gtk-4.0/colors.css' }
 
-dunst = { src = 'dunstrc', dst = '~/.config/dunst/dunstrc' }
+mako = {src = 'makoconfig', dst = '~/.config/mako/config' }
