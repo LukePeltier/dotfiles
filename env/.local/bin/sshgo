@@ -1,12 +1,32 @@
 #!/usr/bin/env bash
 
+# Password file location (not tracked by git)
+PASSWORD_FILE="${SSHGO_PASSWORD_FILE:-$HOME/.config/sshgo/password}"
+
+# Check if password file exists
+if [[ ! -f "$PASSWORD_FILE" ]]; then
+    echo "Error: Password file not found at: $PASSWORD_FILE" >&2
+    echo "Please create the file and set appropriate permissions (chmod 600)" >&2
+    echo "You can override the location by setting SSHGO_PASSWORD_FILE environment variable" >&2
+    exit 1
+fi
+
+# Check file permissions (should be 600 or 400)
+if [[ "$(uname)" != "Darwin" ]]; then
+    perms=$(stat -c %a "$PASSWORD_FILE" 2>/dev/null)
+    if [[ "$perms" != "600" && "$perms" != "400" ]]; then
+        echo "Warning: Password file has insecure permissions: $perms" >&2
+        echo "Recommended: chmod 600 $PASSWORD_FILE" >&2
+    fi
+fi
+
 host="$1"
 if [[ $host == blr-* ]]; then
-   realhost="msa${host#blr-}.automation.local"
+   realhost="msa${host#blr-}.automation.internal"
    shift
-   exec ssh -J blrproxy -o "StrictHostKeyChecking no" root@"$realhost" "$@"
+   exec sshpass -f "$PASSWORD_FILE" ssh -J blrproxy -o "StrictHostKeyChecking no" root@"$realhost" "$@"
 else
-   realhost="msa${host}.automation.local"
+   realhost="msa${host}.automation.internal"
    shift
-   exec ssh -J houproxy -o "StrictHostKeyChecking no" root@"$realhost" "$@"
+   exec sshpass -f "$PASSWORD_FILE" ssh -J houproxy -o "StrictHostKeyChecking no" root@"$realhost" "$@"
 fi
