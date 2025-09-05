@@ -68,3 +68,6 @@ keybind = ctrl+space>minus=new_split:down
 keybind = ctrl+space>comma=reload_config
 keybind = ctrl+space>x=close_surface
 # keybind = ctrl+space>8=close_tab
+
+
+gtk-single-instance = true

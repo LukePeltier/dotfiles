@@ -4,7 +4,8 @@
   "spacing": 0,
   "margin": "8px 8px 0 8px",
   "modules-left": [
-    "hyprland/workspaces"
+    "hyprland/workspaces",
+    "hyprland/window"
   ],
   "modules-center": [
     "privacy",
@@ -13,30 +14,27 @@
   ],
   "modules-right": [
     "tray",
+    "pulseaudio#input",
     "cpu",
     "memory",
     "idle_inhibitor",
     "custom/power"
   ],
+  "pulseaudio#input": {
+    "format-source": "󰍬",
+    "format-source-muted": "󰍭",
+    "format": "{format_source}",
+    "on-click": "amixer sset 'Capture' toggle",
+    "on-click-middle": "pavucontrol"
+  },
   "hyprland/workspaces": {
     "on-click": "activate",
-    "active-only": false,
     "show-special": true,
     "special-visible-only": true,
     "format-icons": {
-      "urgent": "*",
-      "special": "󰍛",
       "active": "󱓻"
     },
-    "all-outputs": true,
-    "persistent_workspaces": {
-      "*": [
-        1,
-        2,
-        3,
-        4
-      ]
-    }
+    "all-outputs": true
   },
   "clock": {
     "interval": 60,
@@ -96,15 +94,15 @@
     "format": "\uefc5 {used:0.1f} GB"
   },
   "custom/power": {
-    "format": " ",
+    "format": "",
     "on-click": "wlogout --protocol layer-shell -b 2",
     "tooltip": false
   },
   "idle_inhibitor": {
     "format": "{icon}",
     "format-icons": {
-      "activated": " ",
-      "deactivated": " "
+      "activated": "",
+      "deactivated": ""
     },
     "timeout": 30.5
   }

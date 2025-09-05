@@ -8,6 +8,11 @@ use = "yazi-rs/plugins:smart-enter"
 rev = "b12a9ab"
 hash = "7918aab6a71caf31b58411f789195677"
 
+[[plugin.deps]]
+use = "yazi-rs/plugins:smart-paste"
+rev = "d7588f6"
+hash = "a8050052e59f3952abe0b3e27a5843de"
+
 [[flavor.deps]]
 use = "dangooddd/kanagawa"
 rev = "31167ed"
