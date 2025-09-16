@@ -1,7 +1,7 @@
 [user]
   name = Luke Peltier
   email = luke@lukepeltier.com
-  signingkey = ~/.ssh/id_ed25519.pub
+  signingkey = B07692B5752F8039
 
 [includeIf "hasconfig:remote.*.url:ssh://git@bitbucket.microchip.com/*/**"]
   path = ~/.gitconfig-work
@@ -33,9 +33,6 @@
 
 [diff]
   colorMoved = no
-
-[gpg]
-  format = ssh
 
 [commit]
   gpgsign = true
