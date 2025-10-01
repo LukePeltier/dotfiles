@@ -15,3 +15,4 @@ set -gx OZONE_PLATFORM wayland
 # Use XCompose file
 set -gx XCOMPOSEFILE $HOME/.XCompose
 
+set -gx QT_STYLE_OVERRIDE kvantum
