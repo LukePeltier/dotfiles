@@ -19,3 +19,5 @@ if status is-interactive
   starship init fish | source
 end
 
+
+fish_add_path /home/luke/.spicetify

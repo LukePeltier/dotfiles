@@ -1,19 +1,22 @@
 
 
-spawn-at-startup "swww-daemon"
-spawn-at-startup "swww" "img" "~/Pictures/wallpapers/current_wallpaper"
+spawn-at-startup "systemctl" "--user" "start" "plasma-polkit-agent"
+spawn-at-startup "systemctl" "--user" "start" "gnome-keyring-daemon.service"
+spawn-at-startup "systemctl" "--user" "start" "cliphist.service"
+spawn-at-startup "systemctl" "--user" "start" "waybar.service"
+spawn-at-startup "systemctl" "--user" "start" "mako.service"
+
 
 spawn-at-startup "udiskie"
 spawn-at-startup "qpwgraph" "--minimized"
 
 spawn-at-startup "clipboard-sync"
-spawn-at-startup "systemctl" "--user" "start" "plasma-polkit-agent"
-spawn-at-startup "systemctl" "--user" "start" "gnome-keyring-daemon.service"
 
 
 spawn-at-startup "ghostty" "--gtk-single-instance=true" "--initial-window=false"
 
-spawn-at-startup "~/.local/bin/open-float-dynamically.py"
+spawn-at-startup "swww-daemon"
+spawn-at-startup "swww" "img" "~/Pictures/wallpapers/current_wallpaper"
 
 environment {
     DISPLAY ":0"
@@ -42,6 +45,12 @@ input {
 
     // Setting max-scroll-amount="0%" makes it work only on windows already fully on screen.
     focus-follows-mouse max-scroll-amount="95%"
+}
+
+gestures {
+    hot-corners {
+        off
+    }
 }
 
 // https://yalter.github.io/niri/Configuration:-Outputs
@@ -73,7 +82,7 @@ layout {
     // Set gaps around windows in logical pixels.
     gaps 8
     center-focused-column "never"
-    // always-center-single-column
+    always-center-single-column
 
     // You can customize the widths that "switch-preset-column-width" (Mod+R) toggles between.
     preset-column-widths {
@@ -158,6 +167,7 @@ binds {
     Mod+B hotkey-overlay-title="Open Browser: firefox" { spawn "firefox"; }
     // Mod+E hotkey-overlay-title="Open Files" { spawn "ghostty" "-e" "yazi"; }
     Mod+E hotkey-overlay-title="Open Files" { spawn "nautilus" "--new-window"; }
+    Mod+V { spawn "rofi" "-modi" "clipboard:~/.local/bin/cliphist-rofi-img" "-show" "clipboard" "-show-icons" "-theme" "~/.config/rofi/launchers/type-1/style-11.rasi"; }
 
     Mod+Backslash { spawn "gtk-launch" "bitwarden.desktop"; }
     // Example volume keys mappings for PipeWire & WirePlumber.
