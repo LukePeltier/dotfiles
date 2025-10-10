@@ -5,7 +5,7 @@
   "margin": "8px 8px 0 8px",
   "modules-left": [
     "niri/workspaces",
-    "niri/window"
+    "wlr/taskbar"
   ],
   "modules-center": [
     "privacy",
@@ -19,14 +19,14 @@
     "idle_inhibitor",
     "custom/power"
   ],
-  "hyprland/workspaces": {
+  "wlr/taskbar": {
+    // "all-outputs": true,
+    // "format": "{icon} {title} {short_state}",
+    "format": "{icon}",
+    "tooltip-format": "{title} | {app_id}",
     "on-click": "activate",
-    "show-special": true,
-    "special-visible-only": true,
-    "format-icons": {
-      "active": "󱓻"
-    },
-    "all-outputs": true
+    "on-click-middle": "close",
+    "on-click-right": "fullscreen"
   },
   "clock": {
     "interval": 60,

@@ -36,14 +36,14 @@ saturation = 35
 
 # hypr = { src = 'hyprland.conf', dst = '~/.config/hypr/conf/border.conf' }
 #
-# waybar = { src = 'waybar.css', dst = '~/.config/waybar/colors.css' }
+waybar = { src = 'waybar.css', dst = '~/.config/waybar/colors.css' }
 #
-# wlogout = { src = 'wlogout.css', dst = '~/.config/wlogout/colors.css' }
+wlogout = { src = 'wlogout.css', dst = '~/.config/wlogout/colors.css' }
 #
 # gtk3 = { src = 'gtk.css', dst = '~/.config/gtk-3.0/colors.css' }
-#
+# #
 # gtk4 = { src = 'gtk.css', dst = '~/.config/gtk-4.0/colors.css' }
 #
-# mako = {src = 'makoconfig', dst = '~/.config/mako/config' }
+mako = {src = 'makoconfig', dst = '~/.config/mako/config' }
 
 ghostty_blaze = {src = 'ghostty_blaze_shader.glsl', dst = '~/.config/ghostty/shaders/cursor_blaze.glsl'}

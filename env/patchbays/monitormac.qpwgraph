@@ -1,20 +1,12 @@
 <!DOCTYPE patchbay>
-<patchbay name="monitormac" version="0.9.0">
+<patchbay name="monitormac" version="0.9.5">
  <items>
   <item node-type="pipewire" port-type="pipewire-audio">
-   <output node="Split Scarlett Solo (3rd Gen.) Input 2 Inst/Line" port="Split Scarlett Solo (3rd Gen.) Input 2 Inst/Line:monitor_AUX1"/>
-   <input node="Easy Effects Sink" port="Easy Effects Sink:playback_FR"/>
-  </item>
-  <item node-type="pipewire" port-type="pipewire-audio">
-   <output node="USB Audio Line Input" port="USB Audio #1:capture_FL"/>
+   <output node="Scarlett Solo (3rd Gen.) Input 2 Inst/Line" port="Scarlett Solo USB:capture_MONO"/>
    <input node="Easy Effects Sink" port="Easy Effects Sink:playback_FL"/>
   </item>
   <item node-type="pipewire" port-type="pipewire-audio">
-   <output node="Split Scarlett Solo (3rd Gen.) Input 2 Inst/Line" port="Split Scarlett Solo (3rd Gen.) Input 2 Inst/Line:monitor_AUX1"/>
-   <input node="Easy Effects Sink" port="Easy Effects Sink:playback_FL"/>
-  </item>
-  <item node-type="pipewire" port-type="pipewire-audio">
-   <output node="USB Audio Line Input" port="USB Audio #1:capture_FR"/>
+   <output node="Scarlett Solo (3rd Gen.) Input 2 Inst/Line" port="Scarlett Solo USB:capture_MONO"/>
    <input node="Easy Effects Sink" port="Easy Effects Sink:playback_FR"/>
   </item>
  </items>
