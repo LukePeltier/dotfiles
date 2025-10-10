@@ -166,3 +166,13 @@ tooltip class {
     /* border: solid 2px @foreground; */
     border-radius: 8px;
 }
+
+
+#custom-notification {
+    color: @text-color;
+    background: @background;
+    margin: 0 4px;
+    padding: 0 12px;
+    /* border: solid 2px @foreground; */
+    border-radius: 8px;
+}

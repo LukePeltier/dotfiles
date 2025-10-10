@@ -4,7 +4,7 @@ spawn-at-startup "systemctl" "--user" "start" "plasma-polkit-agent"
 spawn-at-startup "systemctl" "--user" "start" "gnome-keyring-daemon.service"
 spawn-at-startup "systemctl" "--user" "start" "cliphist.service"
 spawn-at-startup "systemctl" "--user" "start" "mako.service"
-spawn-at-startup "systemctl" "--user" "start" "waybar.service"
+spawn-at-startup "swaync"
 // spawn-at-startup "systemctl" "--user" "start" "elephant.service"
 // spawn-at-startup "systemctl" "--user" "start" "walker.service"
 
