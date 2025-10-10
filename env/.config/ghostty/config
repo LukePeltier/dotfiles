@@ -5,8 +5,8 @@ window-padding-x = 14
 theme = TokyoNight Night
 font-family = JetBrains Mono
 shell-integration-features=cursor,no-sudo,title,ssh-env,ssh-terminfo
-background-opacity=0.8
-background-blur=true
+background-opacity=0.9
+# background-blur=true
 window-decoration=none
 
 custom-shader-animation = true
