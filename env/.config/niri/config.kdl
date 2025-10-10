@@ -238,7 +238,7 @@ binds {
     Super+Alt+L hotkey-overlay-title="Lock the Screen: swaylock" { spawn "swaylock"; }
     Mod+B hotkey-overlay-title="Open Browser: firefox" { spawn "firefox"; }
     // Mod+E hotkey-overlay-title="Open Files" { spawn "ghostty" "-e" "yazi"; }
-    Mod+E hotkey-overlay-title="Open Files" { spawn "nautilus" "--new-window"; }
+    Mod+E hotkey-overlay-title="Open Files" { spawn "thunar"; }
     Mod+V { spawn "rofi" "-modi" "clipboard:~/.local/bin/cliphist-rofi-img" "-show" "clipboard" "-show-icons" "-theme" "~/.config/rofi/launchers/type-1/style-11.rasi"; }
 
     // Mod+V { spawn "walker" "-m" "clipboard"; }
