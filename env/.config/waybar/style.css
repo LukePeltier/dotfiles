@@ -34,7 +34,7 @@ window#waybar {
     border-radius: 8px;
 }
 
-#taskbar {
+#taskbar button {
     background: @background;
     border-radius: 8px;
     margin: 0 4px;

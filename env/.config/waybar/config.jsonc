@@ -16,8 +16,6 @@
     "tray",
     "cpu",
     "memory",
-    "idle_inhibitor",
-    "custom/notification",
     "custom/power"
   ],
   "wlr/taskbar": {
@@ -33,8 +31,7 @@
     "interval": 60,
     "format": "{:%I:%M %p}",
     "format-alt": "{:%a, %b %d}",
-    "tooltip-format": "<tt><small>{calendar}</small></tt>",
-    "on-click": "swaync-client -op"
+    "tooltip-format": "<tt><small>{calendar}</small></tt>"
   },
   "mpris": {
     "format": "{player_icon}  {status_icon}",
@@ -90,26 +87,6 @@
     "format": "",
     "on-click": "wlogout --protocol layer-shell -b 2",
     "tooltip": false
-  },
-  "custom/notification": {
-    "tooltip": false,
-    "format": "{icon}",
-    "format-icons": {
-      "notification": "<span foreground='red'><sup></sup></span>",
-      "none": "",
-      "dnd-notification": "<span foreground='red'><sup></sup></span>",
-      "dnd-none": "",
-      "inhibited-notification": "<span foreground='red'><sup></sup></span>",
-      "inhibited-none": "",
-      "dnd-inhibited-notification": "<span foreground='red'><sup></sup></span>",
-      "dnd-inhibited-none": ""
-    },
-    "return-type": "json",
-    "exec-if": "which swaync-client",
-    "exec": "swaync-client -swb",
-    "on-click": "swaync-client -t -sw",
-    "on-click-right": "swaync-client -d -sw",
-    "escape": true
   },
   "idle_inhibitor": {
     "format": "{icon}",

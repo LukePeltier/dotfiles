@@ -14,3 +14,4 @@ set -gx OZONE_PLATFORM wayland
 # Use XCompose file
 set -gx XCOMPOSEFILE $HOME/.XCompose
 
+set -gx QT_QPA_PLATFORMTHEME qt6ct

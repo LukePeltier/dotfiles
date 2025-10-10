@@ -1,13 +1,21 @@
 <!DOCTYPE patchbay>
-<patchbay name="monitormac" version="0.9.5">
+<patchbay name="monitormac" version="0.9.6">
  <items>
   <item node-type="pipewire" port-type="pipewire-audio">
    <output node="Scarlett Solo (3rd Gen.) Input 2 Inst/Line" port="Scarlett Solo USB:capture_MONO"/>
+   <input node="Carla" port="Carla:audio-in1"/>
+  </item>
+  <item node-type="pipewire" port-type="pipewire-audio">
+   <output node="Carla" port="Carla:audio-out2"/>
+   <input node="Easy Effects Sink" port="Easy Effects Sink:playback_FR"/>
+  </item>
+  <item node-type="pipewire" port-type="pipewire-audio">
+   <output node="Carla" port="Carla:audio-out1"/>
    <input node="Easy Effects Sink" port="Easy Effects Sink:playback_FL"/>
   </item>
   <item node-type="pipewire" port-type="pipewire-audio">
    <output node="Scarlett Solo (3rd Gen.) Input 2 Inst/Line" port="Scarlett Solo USB:capture_MONO"/>
-   <input node="Easy Effects Sink" port="Easy Effects Sink:playback_FR"/>
+   <input node="Carla" port="Carla:audio-in2"/>
   </item>
  </items>
 </patchbay>

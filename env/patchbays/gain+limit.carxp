@@ -1,0 +1,376 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE CARLA-PROJECT>
+<CARLA-PROJECT VERSION='2.5'>
+ <EngineSettings>
+  <ForceStereo>false</ForceStereo>
+  <PreferPluginBridges>false</PreferPluginBridges>
+  <PreferUiBridges>true</PreferUiBridges>
+  <UIsAlwaysOnTop>false</UIsAlwaysOnTop>
+  <MaxParameters>200</MaxParameters>
+  <UIBridgesTimeout>4000</UIBridgesTimeout>
+ </EngineSettings>
+
+ <Transport>
+  <BeatsPerMinute>120</BeatsPerMinute>
+ </Transport>
+
+ <!-- Calf Mono Input -->
+ <Plugin>
+  <Info>
+   <Type>LV2</Type>
+   <Name>Calf Mono Input</Name>
+   <URI>http://calf.sourceforge.net/plugins/MonoInput</URI>
+  </Info>
+
+  <Data>
+   <Active>Yes</Active>
+   <ControlChannel>1</ControlChannel>
+   <Options>0x3f1</Options>
+
+   <Parameter>
+    <Index>0</Index>
+    <Name>Bypass</Name>
+    <Symbol>bypass</Symbol>
+    <Value>0</Value>
+   </Parameter>
+
+   <Parameter>
+    <Index>1</Index>
+    <Name>Input</Name>
+    <Symbol>level_in</Symbol>
+    <Value>3.21484375</Value>
+   </Parameter>
+
+   <Parameter>
+    <Index>2</Index>
+    <Name>Output</Name>
+    <Symbol>level_out</Symbol>
+    <Value>1</Value>
+   </Parameter>
+
+   <Parameter>
+    <Index>9</Index>
+    <Name>Balance</Name>
+    <Symbol>balance_out</Symbol>
+    <Value>0</Value>
+   </Parameter>
+
+   <Parameter>
+    <Index>10</Index>
+    <Name>Softclip</Name>
+    <Symbol>softclip</Symbol>
+    <Value>0</Value>
+   </Parameter>
+
+   <Parameter>
+    <Index>11</Index>
+    <Name>Mute L</Name>
+    <Symbol>mutel</Symbol>
+    <Value>0</Value>
+   </Parameter>
+
+   <Parameter>
+    <Index>12</Index>
+    <Name>Mute R</Name>
+    <Symbol>muter</Symbol>
+    <Value>0</Value>
+   </Parameter>
+
+   <Parameter>
+    <Index>13</Index>
+    <Name>Phase L</Name>
+    <Symbol>phasel</Symbol>
+    <Value>0</Value>
+   </Parameter>
+
+   <Parameter>
+    <Index>14</Index>
+    <Name>Phase R</Name>
+    <Symbol>phaser</Symbol>
+    <Value>0</Value>
+   </Parameter>
+
+   <Parameter>
+    <Index>15</Index>
+    <Name>Delay</Name>
+    <Symbol>delay</Symbol>
+    <Value>0</Value>
+   </Parameter>
+
+   <Parameter>
+    <Index>16</Index>
+    <Name>Stereo Base</Name>
+    <Symbol>stereo_base</Symbol>
+    <Value>0</Value>
+   </Parameter>
+
+   <Parameter>
+    <Index>17</Index>
+    <Name>Stereo Phase</Name>
+    <Symbol>stereo_phase</Symbol>
+    <Value>0</Value>
+   </Parameter>
+
+   <Parameter>
+    <Index>18</Index>
+    <Name>S/C Level</Name>
+    <Symbol>sc_level</Symbol>
+    <Value>1</Value>
+   </Parameter>
+
+   <CustomData>
+    <Type>http://kxstudio.sf.net/ns/carla/property</Type>
+    <Key>CarlaSkinIsCompacted</Key>
+    <Value>false</Value>
+   </CustomData>
+  </Data>
+ </Plugin>
+
+ <!-- Calf Limiter -->
+ <Plugin>
+  <Info>
+   <Type>LV2</Type>
+   <Name>Calf Limiter</Name>
+   <URI>http://calf.sourceforge.net/plugins/Limiter</URI>
+  </Info>
+
+  <Data>
+   <Active>Yes</Active>
+   <ControlChannel>1</ControlChannel>
+   <Options>0x3f1</Options>
+
+   <Parameter>
+    <Index>0</Index>
+    <Name>Bypass</Name>
+    <Symbol>bypass</Symbol>
+    <Value>0</Value>
+   </Parameter>
+
+   <Parameter>
+    <Index>1</Index>
+    <Name>Input Gain</Name>
+    <Symbol>level_in</Symbol>
+    <Value>1</Value>
+   </Parameter>
+
+   <Parameter>
+    <Index>2</Index>
+    <Name>Output Gain</Name>
+    <Symbol>level_out</Symbol>
+    <Value>1</Value>
+   </Parameter>
+
+   <Parameter>
+    <Index>11</Index>
+    <Name>Limit</Name>
+    <Symbol>limit</Symbol>
+    <Value>0.895588636398315</Value>
+   </Parameter>
+
+   <Parameter>
+    <Index>12</Index>
+    <Name>Lookahead</Name>
+    <Symbol>attack</Symbol>
+    <Value>5</Value>
+   </Parameter>
+
+   <Parameter>
+    <Index>13</Index>
+    <Name>Release</Name>
+    <Symbol>release</Symbol>
+    <Value>50</Value>
+   </Parameter>
+
+   <Parameter>
+    <Index>15</Index>
+    <Name>ASC</Name>
+    <Symbol>asc</Symbol>
+    <Value>1</Value>
+   </Parameter>
+
+   <Parameter>
+    <Index>17</Index>
+    <Name>ASC Level</Name>
+    <Symbol>asc_coeff</Symbol>
+    <Value>0.5</Value>
+   </Parameter>
+
+   <Parameter>
+    <Index>18</Index>
+    <Name>Oversampling</Name>
+    <Symbol>oversampling</Symbol>
+    <Value>1</Value>
+   </Parameter>
+
+   <Parameter>
+    <Index>19</Index>
+    <Name>Auto-level</Name>
+    <Symbol>auto_level</Symbol>
+    <Value>0</Value>
+   </Parameter>
+  </Data>
+ </Plugin>
+
+ <ExternalPatchbay>
+  <Connection>
+   <Source>Elgato Wave XLR Mono:capture_MONO</Source>
+   <Target>Noise Reduction:input_FL</Target>
+  </Connection>
+  <Connection>
+   <Source>Scarlett Solo (3rd Gen.) Input 2 Inst/Line:capture_MONO</Source>
+   <Target>Calf Mono Input:In L</Target>
+  </Connection>
+  <Connection>
+   <Source>Scarlett Solo (3rd Gen.) 0:capture_AUX0</Source>
+   <Target>Split Scarlett Solo (3rd Gen.) Input 1 Mic:input_AUX0</Target>
+  </Connection>
+  <Connection>
+   <Source>Scarlett Solo (3rd Gen.) 0:capture_AUX1</Source>
+   <Target>Split Scarlett Solo (3rd Gen.) Input 2 Inst/Line:input_AUX1</Target>
+  </Connection>
+  <Connection>
+   <Source>Output Level Meter:output_FL</Source>
+   <Target>Schiit Modi 3E Analog Stereo:playback_FL</Target>
+  </Connection>
+  <Connection>
+   <Source>Output Level Meter:output_FR</Source>
+   <Target>Schiit Modi 3E Analog Stereo:playback_FR</Target>
+  </Connection>
+  <Connection>
+   <Source>Spectrum:output_FL</Source>
+   <Target>Output Level Meter:input_FL</Target>
+  </Connection>
+  <Connection>
+   <Source>Spectrum:output_FR</Source>
+   <Target>Output Level Meter:input_FR</Target>
+  </Connection>
+  <Connection>
+   <Source>Output Level Meter:output_FL-134</Source>
+   <Target>Easy Effects Source:input_FL</Target>
+  </Connection>
+  <Connection>
+   <Source>Output Level Meter:output_FR-135</Source>
+   <Target>Easy Effects Source:input_FR</Target>
+  </Connection>
+  <Connection>
+   <Source>Spectrum:output_FL-143</Source>
+   <Target>Output Level Meter:input_FL-132</Target>
+  </Connection>
+  <Connection>
+   <Source>Spectrum:output_FR-144</Source>
+   <Target>Output Level Meter:input_FR-133</Target>
+  </Connection>
+  <Connection>
+   <Source>Limiter:output_FL</Source>
+   <Target>Spectrum:input_FL-141</Target>
+  </Connection>
+  <Connection>
+   <Source>Limiter:output_FR</Source>
+   <Target>Spectrum:input_FR-142</Target>
+  </Connection>
+  <Connection>
+   <Source>Equalizer:output_FL-358</Source>
+   <Target>Gate:input_FL</Target>
+  </Connection>
+  <Connection>
+   <Source>Equalizer:output_FR-359</Source>
+   <Target>Gate:input_FR</Target>
+  </Connection>
+  <Connection>
+   <Source>Noise Reduction:output_FL</Source>
+   <Target>Stereo Tools:input_FL</Target>
+  </Connection>
+  <Connection>
+   <Source>Noise Reduction:output_FR</Source>
+   <Target>Stereo Tools:input_FR</Target>
+  </Connection>
+  <Connection>
+   <Source>Gate:output_FL</Source>
+   <Target>Speech Processor:input_FL</Target>
+  </Connection>
+  <Connection>
+   <Source>Gate:output_FR</Source>
+   <Target>Speech Processor:input_FR</Target>
+  </Connection>
+  <Connection>
+   <Source>Deesser:output_FL</Source>
+   <Target>Compressor:input_FL</Target>
+  </Connection>
+  <Connection>
+   <Source>Deesser:output_FR</Source>
+   <Target>Compressor:input_FR</Target>
+  </Connection>
+  <Connection>
+   <Source>Stereo Tools:output_FL</Source>
+   <Target>Deesser:input_FL</Target>
+  </Connection>
+  <Connection>
+   <Source>Stereo Tools:output_FR</Source>
+   <Target>Deesser:input_FR</Target>
+  </Connection>
+  <Connection>
+   <Source>Speech Processor:output_FL</Source>
+   <Target>Limiter:input_FL</Target>
+  </Connection>
+  <Connection>
+   <Source>Speech Processor:output_FR</Source>
+   <Target>Limiter:input_FR</Target>
+  </Connection>
+  <Connection>
+   <Source>Compressor:output_FL</Source>
+   <Target>Equalizer:input_FL-356</Target>
+  </Connection>
+  <Connection>
+   <Source>Compressor:output_FR</Source>
+   <Target>Equalizer:input_FR-357</Target>
+  </Connection>
+  <Connection>
+   <Source>Equalizer:output_FL</Source>
+   <Target>Spectrum:input_FL</Target>
+  </Connection>
+  <Connection>
+   <Source>Equalizer:output_FR</Source>
+   <Target>Spectrum:input_FR</Target>
+  </Connection>
+  <Connection>
+   <Source>freerdp:output_FL</Source>
+   <Target>Easy Effects Sink:playback_FL</Target>
+  </Connection>
+  <Connection>
+   <Source>freerdp:output_FR</Source>
+   <Target>Easy Effects Sink:playback_FR</Target>
+  </Connection>
+  <Connection>
+   <Source>Calf Mono Input:Out L</Source>
+   <Target>Calf Limiter:In L</Target>
+  </Connection>
+  <Connection>
+   <Source>Calf Mono Input:Out R</Source>
+   <Target>Calf Limiter:In R</Target>
+  </Connection>
+  <Connection>
+   <Source>Firefox:output_FL</Source>
+   <Target>Easy Effects Sink:playback_FL</Target>
+  </Connection>
+  <Connection>
+   <Source>Firefox:output_FR</Source>
+   <Target>Easy Effects Sink:playback_FR</Target>
+  </Connection>
+  <Connection>
+   <Source>Calf Limiter:Out L</Source>
+   <Target>Easy Effects Sink:playback_FL</Target>
+  </Connection>
+  <Connection>
+   <Source>Calf Limiter:Out R</Source>
+   <Target>Easy Effects Sink:playback_FR</Target>
+  </Connection>
+  <Connection>
+   <Source>Easy Effects Sink:monitor_FL</Source>
+   <Target>Equalizer:input_FL</Target>
+  </Connection>
+  <Connection>
+   <Source>Easy Effects Sink:monitor_FR</Source>
+   <Target>Equalizer:input_FR</Target>
+  </Connection>
+ </ExternalPatchbay>
+</CARLA-PROJECT>
