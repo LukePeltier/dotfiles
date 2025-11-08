@@ -192,6 +192,12 @@ window-rule {
 }
 
 window-rule {
+    match app-id=r#"^steam$"#
+    exclude title="^Steam$"
+    open-floating true
+}
+
+window-rule {
     match app-id=r#"^Bitwarden$"#
     match app-id=r#"^1Password$"#
     open-floating true
