@@ -1,20 +1,17 @@
-background-color={{background}}
 border-size=2
-border-color={{color6}}
-border-radius=15
+border-radius=8
 default-timeout=5000
 font=JetBrainsMono Nerd Font 10
-text-color={{foreground}}
-ignore-timeout=1
-height=150
 max-icon-size=64
-
-[urgency=high]
-border-color={{color9}}
-default-timeout=0
-
-[urgency=low]
-border-color={{color4}}
+background-color={{background}}
+text-color={{foreground}}
+border-color={{foreground}}
+progress-color=over {{color}}
 
 [app-name=Spotify]
 invisible=1
+
+[urgency=high]
+border-color={{color9}}
+layer=overlay
+

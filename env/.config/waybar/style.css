@@ -2,8 +2,8 @@
 /* Global Styles           */
 /* ======================= */
 
-@define-color text-color #c0caf5;
-@define-color background #1a1b26;
+@import "colors.css";
+@define-color text-color @foreground;
 
 * {
     border: none;
@@ -42,7 +42,7 @@ window#waybar {
 }
 
 #workspaces button {
-    color: #24283b;
+    color: @background;
     padding: 0 8px;
     margin: 0 4px;
     /* border: solid 2px transparent; */
@@ -52,7 +52,7 @@ window#waybar {
 
 #workspaces button.active {
     /* border: solid 2px @foreground; */
-    background: #292e42;
+    background: @color8;
 }
 
 @keyframes urgent-pulse {
@@ -92,17 +92,17 @@ window#waybar {
 }
 
 #mpris.playing {
-    color: #9ece6a;
+    color: @color10;
     background: @background;
 }
 
 #mpris.paused {
-    color: #ff9e64;
+    color: @color11;
     background: @background;
 }
 
 #mpris.stopped {
-    color: #f7768e;
+    color: @color9;
     background: @background;
 }
 
@@ -134,15 +134,14 @@ window#waybar {
 }
 
 #privacy {
-    background: rgba(255, 255, 0, 0.1);
+    background: @background;
     padding: 0 12px;
     margin: 0 4px;
-    /* border: solid 2px #d79921; */
     border-radius: 8px;
 }
 
 #privacy-item {
-    color: #d79921;
+    color: @color3;
 }
 
 /* ======================= */

@@ -104,7 +104,7 @@ layout {
         width 2
         // Color of the ring on the active monitor.
         // active-color "#1abc9cee"
-        active-color "#7fc8ff"
+        active-color "#83a598"
         // inactive-color "#595959"
         inactive-color "#505050"
 
@@ -455,8 +455,8 @@ binds {
 
     // Mod+Shift+S { screenshot; }
     Mod+P {screenshot;}
-    // Mod+Shift+S { spawn "~/.local/bin/screenshot"; }
-    Mod+Shift+S { screenshot; }
+    Mod+Shift+S { spawn "~/.local/bin/screenshot"; }
+    // Mod+Shift+S { screenshot; }
     Ctrl+Print { screenshot-screen; }
     Alt+Print { screenshot-window; }
 

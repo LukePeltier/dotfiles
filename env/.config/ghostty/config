@@ -3,8 +3,9 @@
 window-padding-x = 14
 # cursor-style = block
 theme = TokyoNight Night
+# theme = Gruvbox Dark
 font-family = JetBrains Mono
-shell-integration-features=cursor,no-sudo,title,ssh-env,ssh-terminfo
+shell-integration-features=cursor,no-sudo,title
 background-opacity=0.9
 # background-blur=true
 window-decoration=none

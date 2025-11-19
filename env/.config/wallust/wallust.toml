@@ -46,4 +46,4 @@ wlogout = { src = 'wlogout.css', dst = '~/.config/wlogout/colors.css' }
 #
 mako = {src = 'makoconfig', dst = '~/.config/mako/config' }
 
-ghostty_blaze = {src = 'ghostty_blaze_shader.glsl', dst = '~/.config/ghostty/shaders/cursor_blaze.glsl'}
+# ghostty_blaze = {src = 'ghostty_blaze_shader.glsl', dst = '~/.config/ghostty/shaders/cursor_blaze.glsl'}
