@@ -45,5 +45,6 @@ wlogout = { src = 'wlogout.css', dst = '~/.config/wlogout/colors.css' }
 # gtk4 = { src = 'gtk.css', dst = '~/.config/gtk-4.0/colors.css' }
 #
 mako = {src = 'makoconfig', dst = '~/.config/mako/config' }
+tmux = {src = 'tmux-colors.conf', dst = '~/.config/tmux/colors.conf' }
 
 ghostty_blaze = {src = 'ghostty_blaze_shader.glsl', dst = '~/.config/ghostty/shaders/cursor_blaze.glsl'}

@@ -101,10 +101,10 @@ vec2 getRectangleCenter(vec4 rectangle) {
 }
 
 // Wallust themed colors - these will be replaced by wallust
-const vec4 TRAIL_COLOR = vec4(18.0 / 255.0, 213.0 / 255.0, 174.0 / 255.0, 1.0); // Using accent color
+const vec4 TRAIL_COLOR = vec4(125.0 / 255.0, 207.0 / 255.0, 255.0 / 255.0, 1.0); // Using accent color
 const vec4 CURRENT_CURSOR_COLOR = TRAIL_COLOR;
 const vec4 PREVIOUS_CURSOR_COLOR = TRAIL_COLOR;
-const vec4 TRAIL_COLOR_ACCENT = vec4(47.0 / 255.0, 123.0 / 255.0, 112.0 / 255.0, 1.0); // Using accent color
+const vec4 TRAIL_COLOR_ACCENT = vec4(224.0 / 255.0, 175.0 / 255.0, 104.0 / 255.0, 1.0); // Using accent color
 
 // Animation parameters
 const float DURATION = .5;
