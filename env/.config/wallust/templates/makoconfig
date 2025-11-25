@@ -6,7 +6,7 @@ max-icon-size=64
 background-color={{background}}
 text-color={{foreground}}
 border-color={{foreground}}
-progress-color=over {{color}}
+progress-color=over {{foreground}}
 
 [app-name=Spotify]
 invisible=1

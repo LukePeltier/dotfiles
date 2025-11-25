@@ -1,6 +1,5 @@
 # Set the cursor size for xcursor
 set -gx XCURSOR_SIZE 24
-set -gx HYPRCURSOR_SIZE 24
 
 # XDG Desktop Portal
 set -gx XDG_SESSION_TYPE wayland
@@ -14,4 +13,6 @@ set -gx OZONE_PLATFORM wayland
 # Use XCompose file
 set -gx XCOMPOSEFILE $HOME/.XCompose
 
-set -gx QT_QPA_PLATFORMTHEME qt6ct
+set -gx QT_STYLE_OVERRIDE kvantum
+set -gx QT_QPA_PLATFORMTHEME qt5ct
+set -gx QT_AUTO_SCREEN_SCALE_FACTOR 1

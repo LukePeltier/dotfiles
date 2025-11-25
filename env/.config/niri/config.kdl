@@ -1,10 +1,9 @@
 
-
 spawn-at-startup "systemctl" "--user" "start" "plasma-polkit-agent"
 spawn-at-startup "systemctl" "--user" "start" "gnome-keyring-daemon.service"
 spawn-at-startup "systemctl" "--user" "start" "cliphist.service"
 spawn-at-startup "systemctl" "--user" "start" "waybar.service"
-spawn-at-startup "swaync"
+// spawn-at-startup "systemctl" "--user" "start" "mako.service"
 
 
 spawn-at-startup "udiskie"
@@ -18,9 +17,7 @@ spawn-at-startup "1password" "--silent"
 
 environment {
     DISPLAY ":0"
-    QT_QPA_PLATFORMTHEME "qt6ct"
     QT_WAYLAND_DISABLE_WINDOWDECORATION "1"
-    // QT_QPA_PLATFORM "wayland"
 }
 
 hotkey-overlay {
@@ -103,10 +100,10 @@ layout {
         // How many logical pixels the ring extends out from the windows.
         width 2
         // Color of the ring on the active monitor.
-        // active-color "#1abc9cee"
-        active-color "#83a598"
-        // inactive-color "#595959"
-        inactive-color "#505050"
+        active-color "#1abc9cee"
+        // active-color "#83a598"
+        inactive-color "#595959"
+        // inactive-color "#505050"
 
 
     }
@@ -243,6 +240,7 @@ binds {
     Mod+Return hotkey-overlay-title="Open a Terminal: ghostty" { spawn "ghostty" "+new-window"; }
     Mod+Space hotkey-overlay-title="Run an Application: rofi" { spawn "~/.config/rofi/scripts/launcher_t1"; }
     // Mod+Space hotkey-overlay-title="Run an Application" { spawn "walker"; }
+    Mod+Shift+Period hotkey-overlay-title="Pick an Emoji" { spawn "rofi" "-modi" "emoji:rofimoji" "-show" "emoji" "-theme" "~/.config/rofi/launchers/type-1/style-11.rasi"; }
 
     Super+Alt+L hotkey-overlay-title="Lock the Screen: swaylock" { spawn "swaylock"; }
     Mod+B hotkey-overlay-title="Open Browser: firefox" { spawn "firefox"; }

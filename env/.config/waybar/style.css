@@ -6,6 +6,7 @@
 @define-color text-color @foreground;
 
 * {
+    all: unset;
     border: none;
     font-family: "JetBrainsMono Nerd Font Propo";
     font-size: 12px;
@@ -148,15 +149,29 @@ window#waybar {
 /* Menu                    */
 /* ======================= */
 
-tooltip class {
+tooltip label {
     color: @text-color;
+    background: @background;
+    border-radius: 4px;
+    margin: 0 4px;
+    padding: 0 12px;
 }
+
+menu {
+    color: @text-color;
+    background: @background;
+    border-radius: 4px;
+    margin: 0 4px;
+    padding: 0 12px;
+}
+
 
 
 /* ======================= */
 /* Power Menu              */
 /* ======================= */
 #custom-power,
+#custom-notifications,
 #idle_inhibitor {
     color: @text-color;
     background: @background;
@@ -167,11 +182,17 @@ tooltip class {
 }
 
 
-#custom-notification {
+#custom-notification,
+#custom-mouse-battery {
     color: @text-color;
     background: @background;
     margin: 0 4px;
     padding: 0 12px;
     /* border: solid 2px @foreground; */
     border-radius: 8px;
+}
+
+menu separator {
+    min-height: 1px;
+    background: @color8
 }

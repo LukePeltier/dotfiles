@@ -16,6 +16,8 @@
     "tray",
     "cpu",
     "memory",
+    "custom/mouse-battery",
+    "custom/notification",
     "custom/power"
   ],
   "wlr/taskbar": {
@@ -95,5 +97,31 @@
       "deactivated": ""
     },
     "timeout": 30.5
-  }
+  },
+  "custom/mouse-battery": {
+    "format": "󰍽 {}%",
+    "interval": 60,
+    "return-type": "json",
+    "exec": "~/.config/waybar/scripts/mouse-battery.sh"
+  },
+  "custom/notification": {
+    "tooltip": true,
+    "format": "{icon} {0}",
+    "format-icons": {
+      "notification": "󱅫",
+      "none": "󰂜",
+      "dnd-notification": "󰂠",
+      "dnd-none": "󰪓",
+      "inhibited-notification": "󰂛",
+      "inhibited-none": "󰪑",
+      "dnd-inhibited-notification": "󰂛",
+      "dnd-inhibited-none": "󰪑"
+    },
+    "return-type": "json",
+    "exec-if": "which swaync-client",
+    "exec": "swaync-client -swb",
+    "on-click": "swaync-client -t -sw",
+    "on-click-right": "swaync-client -d -sw",
+    "escape": true
+  },
 }
