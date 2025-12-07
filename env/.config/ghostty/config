@@ -2,7 +2,7 @@
 # all available config options and their default values.
 window-padding-x = 14
 # cursor-style = block
-theme = TokyoNight Night
+theme = noctalia
 # theme = Gruvbox Dark
 font-family = JetBrains Mono
 shell-integration-features=cursor,no-sudo,title
