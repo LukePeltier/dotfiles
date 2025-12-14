@@ -1,2 +1,4 @@
 [flavor]
-dark = "tokyonight_night"
+light = "noctalia"
+dark  = "noctalia"
+light = "noctalia"

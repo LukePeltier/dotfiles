@@ -1,14 +1,16 @@
 // Autostart applications
 
+// spawn-at-startup "cosmic-ext-alternative-startup"
+
 spawn-at-startup "systemctl" "--user" "start" "plasma-polkit-agent"
 spawn-at-startup "systemctl" "--user" "start" "gnome-keyring-daemon.service"
 spawn-at-startup "systemctl" "--user" "start" "cliphist.service"
-spawn-at-startup "qs" "-c" "noctalia-shell"
+spawn-at-startup "swww-daemon"
 
-spawn-at-startup "udiskie"
+// spawn-at-startup "udiskie"
 spawn-at-startup "qpwgraph"
 spawn-at-startup "carla-rack" "--no-gui" "~/patchbays/gain+limit.carxp"
 
-spawn-at-startup "clipboard-sync"
-
 spawn-at-startup "1password" "--silent"
+
+spawn-at-startup "sh" "-c" "sleep 1 && ~/.local/bin/wallpaper-set ~/Pictures/wallpapers/current.jpg"

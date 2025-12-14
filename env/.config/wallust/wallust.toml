@@ -1,10 +1,10 @@
 # How the image is parse, in order to get the colors:
 # full - resized - wal - thumb -  fastresize - kmeans
-backend = "wal"
+backend = "full"
 
 # What color space to use to produce and select the most prominent colors:
 # lab - labmixed - lch - lchmixed
-color_space = "lch"
+color_space = "labmixed"
 
 # Use the most prominent colors in a way that makes sense, a scheme color palette:
 # dark - dark16 - darkcomp - darkcomp16
@@ -12,7 +12,9 @@ color_space = "lch"
 # harddark - harddark16 - harddarkcomp - harddarkcomp16
 # softdark - softdark16 - softdarkcomp - softdarkcomp16
 # softlight - softlight16 - softlightcomp - softlightcomp16
-palette = "dark"
+palette = "dark16"
+
+check_contrast = true
 
 
 [templates]
@@ -22,17 +24,5 @@ palette = "dark"
 # ¡ If either one is a directory, then both SHOULD be one. !
 # zathura = { template = 'zathura', target = '~/.config/zathura/zathurarc' }
 
-# hypr = { src = 'hyprland.conf', dst = '~/.config/hypr/conf/border.conf' }
-#
-waybar = { src = 'waybar.css', dst = '~/.config/waybar/colors.css' }
-#
-wlogout = { src = 'wlogout.css', dst = '~/.config/wlogout/colors.css' }
-#
-# gtk3 = { src = 'gtk.css', dst = '~/.config/gtk-3.0/colors.css' }
-# #
-# gtk4 = { src = 'gtk.css', dst = '~/.config/gtk-4.0/colors.css' }
-#
-# mako = {src = 'makoconfig', dst = '~/.config/mako/config' }
-tmux = {src = 'tmux-colors.conf', dst = '~/.config/tmux/colors.conf' }
-
-# ghostty_blaze = {src = 'ghostty_blaze_shader.glsl', dst = '~/.config/ghostty/shaders/cursor_blaze.glsl'}
+waybar = { src = 'colors-waybar.css', dst = '~/.config/waybar/colors-wallust.css' }
+swaync = { src = 'colors-swaync.css', dst = '~/.config/swaync/colors-wallust.css' }

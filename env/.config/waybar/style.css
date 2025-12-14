@@ -1,198 +1,109 @@
-/* ======================= */
-/* Global Styles           */
-/* ======================= */
+/* Import wallust-generated colors */
+@import "colors-wallust.css";
 
-@import "colors.css";
-@define-color text-color @foreground;
-
+/* === Global === */
 * {
-    all: unset;
-    border: none;
-    font-family: "JetBrainsMono Nerd Font Propo";
-    font-size: 12px;
-    box-shadow: none;
-    min-height: 28px;
+    font-family: "JetBrainsMono Nerd Font", monospace;
+    font-size: 13px;
+    min-height: 0;
 }
 
+/* Transparent bar with floating margin */
 window#waybar {
     background: transparent;
+    color: @foreground;
+    margin: 2px 4px 0 4px;
 }
 
-/* ======================= */
-/* Interactive States      */
-/* ======================= */
-#custom-power:hover {
-    opacity: 0.8;
+/* === Pill group containers === */
+.modules-left,
+.modules-center,
+.modules-right {
+    background-color: alpha(@background, 0.85);
+    border-radius: 14px;
+    border: 1px solid alpha(@color8, 0.3);
+    padding: 1px 6px;
+    margin: 0px 0;
 }
 
-/* ======================= */
-/* Workspace Management    */
-/* ======================= */
-#workspaces {
-    margin: 0;
-    padding: 0;
-    background: @background;
-    border-radius: 8px;
-}
-
-#taskbar button {
-    background: @background;
-    border-radius: 8px;
-    margin: 0 4px;
-    padding: 0 12px;
-}
-
+/* === Workspaces === */
 #workspaces button {
-    color: @background;
     padding: 0 8px;
-    margin: 0 4px;
-    /* border: solid 2px transparent; */
-    border-radius: 8px;
-    color: @text-color;
+    color: @color7;
+    background: transparent;
+    border: none;
+    border-radius: 10px;
+    margin: 0px 1px;
+    min-width: 18px;
+}
+
+#workspaces button.focused {
+    color: @color5;
 }
 
 #workspaces button.active {
-    /* border: solid 2px @foreground; */
-    background: @color8;
+    color: @foreground;
+    background-color: alpha(@color5, 0.25);
 }
 
-@keyframes urgent-pulse {
-    0% {
-        opacity: 0.5;
-    }
-
-    100% {
-        opacity: 1;
-    }
-
-    50% {
-        opacity: 0.5;
-    }
+#workspaces button.urgent {
+    color: @color1;
 }
 
-/* ======================= */
-/* System Components       */
-/* ======================= */
+#workspaces button:hover {
+    background-color: alpha(@color8, 0.2);
+}
+
+/* === Taskbar === */
+#taskbar button {
+    padding: 0 3px;
+    border-radius: 10px;
+    margin: 0px 1px;
+}
+
+/* === Clock (centerpiece) === */
 #clock {
-    padding: 0 12px;
-    margin: 0 4px;
-    /* border: solid 2px @foreground; */
-    border-radius: 8px;
-    color: @text-color;
-    background: @background;
-    font-weight: 500;
+    color: @foreground;
+    font-weight: bold;
+    padding: 0 10px;
 }
 
-
+/* === MPRIS === */
 #mpris {
-    color: @text-color;
-    padding: 0 12px;
-    margin: 0 4px;
-    border-radius: 8px;
-    background: @background;
+    color: @color5;
+    padding: 0 8px;
 }
 
-#mpris.playing {
-    color: @color10;
-    background: @background;
-}
-
-#mpris.paused {
-    color: @color11;
-    background: @background;
-}
-
-#mpris.stopped {
-    color: @color9;
-    background: @background;
-}
-
-#cpu {
-    color: @text-color;
-    background: @background;
-    padding: 0 12px;
-    margin: 0 4px;
-    border-radius: 8px;
-}
-
-#memory {
-    color: @text-color;
-    background: @background;
-    padding: 0 12px;
-    margin: 0 4px;
-    border-radius: 8px;
-}
-
-/* ======================= */
-/* System Indicators       */
-/* ======================= */
-#tray {
-    background: @background;
-    padding: 0 12px;
-    margin: 0 4px;
-    /* border: solid 2px @foreground; */
-    border-radius: 8px;
-}
-
+/* === Privacy === */
 #privacy {
-    background: @background;
-    padding: 0 12px;
-    margin: 0 4px;
-    border-radius: 8px;
+    padding: 0 6px;
 }
 
-#privacy-item {
-    color: @color3;
+/* === Tray === */
+#tray {
+    padding: 0 6px;
 }
 
-/* ======================= */
-/* Menu                    */
-/* ======================= */
-
-tooltip label {
-    color: @text-color;
-    background: @background;
-    border-radius: 4px;
-    margin: 0 4px;
-    padding: 0 12px;
+/* === CPU === */
+#cpu {
+    color: @color6;
+    padding: 0 8px;
 }
 
-menu {
-    color: @text-color;
-    background: @background;
-    border-radius: 4px;
-    margin: 0 4px;
-    padding: 0 12px;
+/* === Memory === */
+#memory {
+    color: @color5;
+    padding: 0 8px;
 }
 
-
-
-/* ======================= */
-/* Power Menu              */
-/* ======================= */
-#custom-power,
-#custom-notifications,
-#idle_inhibitor {
-    color: @text-color;
-    background: @background;
-    margin: 0 4px;
-    padding: 0 12px;
-    /* border: solid 2px @foreground; */
-    border-radius: 8px;
-}
-
-
-#custom-notification,
+/* === Mouse Battery === */
 #custom-mouse-battery {
-    color: @text-color;
-    background: @background;
-    margin: 0 4px;
-    padding: 0 12px;
-    /* border: solid 2px @foreground; */
-    border-radius: 8px;
+    color: @color13;
+    padding: 0 8px;
 }
 
-menu separator {
-    min-height: 1px;
-    background: @color8
+/* === Notifications === */
+#custom-notification {
+    color: @color4;
+    padding: 0 8px;
 }

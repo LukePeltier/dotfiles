@@ -1,8 +1,11 @@
 {
+  // === Bar settings ===
   "layer": "top",
   "position": "top",
-  "spacing": 0,
-  "margin": "8px 8px 0 8px",
+  "spacing": 8,
+  "height": 30,
+
+  // === Module layout ===
   "modules-left": [
     "niri/workspaces",
     "wlr/taskbar"
@@ -17,52 +20,22 @@
     "cpu",
     "memory",
     "custom/mouse-battery",
-    "custom/notification",
-    "custom/power"
+    "custom/notification"
   ],
+
+  // === Left modules ===
+  "niri/workspaces": {
+    "format": "{value}"
+  },
   "wlr/taskbar": {
-    // "all-outputs": true,
-    // "format": "{icon} {title} {short_state}",
     "format": "{icon}",
     "tooltip-format": "{title} | {app_id}",
     "on-click": "activate",
     "on-click-middle": "close",
     "on-click-right": "fullscreen"
   },
-  "clock": {
-    "interval": 60,
-    "format": "{:%I:%M %p}",
-    "format-alt": "{:%a, %b %d}",
-    "tooltip-format": "<tt><small>{calendar}</small></tt>"
-  },
-  "mpris": {
-    "format": "{player_icon}  {status_icon}",
-    "format-paused": "{player_icon}  {status_icon}",
-    "status-icons": {
-      "playing": "󰐊",
-      "paused": "󰏤",
-      "stopped": "󰓛"
-    },
-    "player-icons": {
-      "default": "󱜏",
-      "spotify_player": "",
-      "spotify": "",
-      "firefox": "󰈹",
-      "chrome": "",
-      "vlc": "󰕼"
-    },
-    "max-length": 30,
-    "return-type": "json",
-    "interval": 1,
-    "on-click": "playerctl play-pause",
-    "on-click-right": "playerctl next",
-    "on-click-middle": "playerctl previous",
-    "tooltip": false
-  },
-  "tray": {
-    "icon-size": 12,
-    "spacing": 10
-  },
+
+  // === Center modules ===
   "privacy": {
     "icon-spacing": 8,
     "icon-size": 14,
@@ -75,28 +48,50 @@
       }
     ]
   },
+  "clock": {
+    "interval": 60,
+    "format": "{:%I:%M %p}",
+    "format-alt": "{:%a, %b %d}",
+    "tooltip-format": "<tt>{calendar}</tt>"
+  },
+  "mpris": {
+    "format": "{player_icon}  {status_icon}",
+    "format-paused": "{player_icon}  {status_icon}",
+    "status-icons": {
+      "playing": "󰐊",
+      "paused": "󰏤",
+      "stopped": "󰓛"
+    },
+    "player-icons": {
+      "default": "󱜏",
+      "spotify_player": "",
+      "spotify": "",
+      "firefox": "󰈹",
+      "chrome": "",
+      "vlc": "󰕼"
+    },
+    "max-length": 30,
+    "return-type": "json",
+    "interval": 1,
+    "on-click": "playerctl play-pause",
+    "on-click-right": "playerctl next",
+    "on-click-middle": "playerctl previous",
+    "tooltip": false
+  },
+
+  // === Right modules ===
+  "tray": {
+    "icon-size": 16,
+    "spacing": 8
+  },
   "cpu": {
     "interval": 2,
     "format": "\uf4bc {usage}%",
     "max-length": 10
   },
-  // Memory
   "memory": {
     "interval": 5,
     "format": "\uefc5 {used:0.1f} GB"
-  },
-  "custom/power": {
-    "format": "",
-    "on-click": "wlogout --protocol layer-shell -b 2",
-    "tooltip": false
-  },
-  "idle_inhibitor": {
-    "format": "{icon}",
-    "format-icons": {
-      "activated": "",
-      "deactivated": ""
-    },
-    "timeout": 30.5
   },
   "custom/mouse-battery": {
     "format": "󰍽 {}%",
@@ -124,4 +119,19 @@
     "on-click-right": "swaync-client -d -sw",
     "escape": true
   },
+
+  // === Unused modules (not in any bar section) ===
+  "custom/power": {
+    "format": "",
+    "on-click": "wlogout --protocol layer-shell -b 2",
+    "tooltip": false
+  },
+  "idle_inhibitor": {
+    "format": "{icon}",
+    "format-icons": {
+      "activated": "",
+      "deactivated": ""
+    },
+    "timeout": 30.5
+  }
 }

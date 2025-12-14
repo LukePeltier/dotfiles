@@ -4,9 +4,9 @@ binds {
     Mod+Shift+Slash { show-hotkey-overlay; }
 
     Mod+Return hotkey-overlay-title="Open a Terminal: ghostty" { spawn "ghostty" "+new-window"; }
-    // Mod+Space hotkey-overlay-title="Run an Application: rofi" { spawn "~/.config/rofi/scripts/launcher_t1"; }
+    Mod+Space hotkey-overlay-title="Run an Application: rofi" { spawn "~/.config/rofi/scripts/launcher_t1"; }
     // Mod+Space hotkey-overlay-title="Run an Application" { spawn "walker"; }
-    Mod+Space { spawn "qs" "-c" "noctalia-shell" "ipc" "call" "launcher" "toggle"; }
+    // Mod+Space { spawn "qs" "-c" "noctalia-shell" "ipc" "call" "launcher" "toggle"; }
     Mod+S { spawn "qs" "-c" "noctalia-shell" "ipc" "call" "controlCenter" "toggle"; }
 
     Mod+Shift+Period hotkey-overlay-title="Pick an Emoji" { spawn "rofi" "-modi" "emoji:rofimoji" "-show" "emoji" "-theme" "~/.config/rofi/launchers/type-1/style-11.rasi"; }

@@ -29,7 +29,7 @@ gestures {
 
 // https://yalter.github.io/niri/Configuration:-Outputs
 output "DP-1" {
-    mode "2560x1440@144"
+    mode "3440x1440@239.984"
 
     scale 1
 
@@ -39,6 +39,10 @@ output "DP-1" {
 
     variable-refresh-rate on-demand=true
     focus-at-startup
+
+    // layout {
+    //     default-column-width { proportion 0.33333; }
+    // }
 }
 
 output "DP-2" {
@@ -48,5 +52,5 @@ output "DP-2" {
 
     transform "normal"
 
-    position x=2560 y=0
+    position x=3440 y=0
 }

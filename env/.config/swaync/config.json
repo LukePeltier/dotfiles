@@ -1,99 +1,36 @@
 {
   "$schema": "/etc/xdg/swaync/configSchema.json",
-  "ignore-gtk-theme": true,
   "positionX": "right",
   "positionY": "top",
-  "layer": "overlay",
-  "control-center-layer": "top",
-  "layer-shell": true,
-  "layer-shell-cover-screen": true,
-  "cssPriority": "user",
-  "control-center-width": 360,
-  "control-center-height": 560,
-  "control-center-margin-top": 13,
-  "control-center-margin-bottom": 13,
-  "control-center-margin-right": 14,
-  "control-center-margin-left": 0,
-  "notification-window-width": 300,
+  "control-center-margin-top": 8,
+  "control-center-margin-bottom": 8,
+  "control-center-margin-right": 8,
+  "control-center-width": 380,
+  "notification-window-width": 380,
   "notification-body-image-height": 100,
   "notification-body-image-width": 200,
-  "notification-2fa-action": true,
-  "notification-inline-replies": false,
-  "timeout": 10,
-  "timeout-low": 5,
+  "timeout": 6,
+  "timeout-low": 4,
   "timeout-critical": 0,
-  "fit-to-screen": true,
-  "relative-timestamps": true,
+  "fit-to-screen": false,
   "keyboard-shortcuts": true,
-  "notification-grouping": true,
   "image-visibility": "when-available",
   "transition-time": 200,
-  "hide-on-clear": false,
+  "hide-on-clear": true,
   "hide-on-action": true,
-  "text-empty": "No Notifications",
-  "script-fail-notify": true,
-  "scripts": {
-    "example-script": {
-      "exec": "echo 'Do something...'",
-      "urgency": "Normal"
-    },
-    "example-action-script": {
-      "exec": "echo 'Do something actionable!'",
-      "urgency": "Normal",
-      "run-on": "action"
-    }
-  },
-  "notification-visibility": {
-    "example-name": {
-      "state": "muted",
-      "urgency": "Low",
-      "app-name": "Spotify"
-    }
-  },
   "widgets": [
-    "inhibitors",
     "title",
     "dnd",
     "notifications"
   ],
   "widget-config": {
-    "notifications": {
-      "vexpand": true
-    },
-    "inhibitors": {
-      "text": "Inhibitors",
-      "button-text": "Clear All",
-      "clear-all-button": true
-    },
     "title": {
       "text": "Notifications",
       "clear-all-button": true,
-      "button-text": "Clear All"
+      "button-text": "Clear"
     },
     "dnd": {
       "text": "Do Not Disturb"
-    },
-    "label": {
-      "max-lines": 5,
-      "text": "Label Text"
-    },
-    "mpris": {
-      "blacklist": [],
-      "autohide": false,
-      "show-album-art": "always",
-      "loop-carousel": false
-    },
-    "buttons-grid": {
-      "buttons-per-row": 7,
-      "actions": [
-        {
-          "label": "直",
-          "type": "toggle",
-          "active": true,
-          "command": "sh -c '[[ $SWAYNC_TOGGLE_STATE == true ]] && nmcli radio wifi on || nmcli radio wifi off'",
-          "update-command": "sh -c '[[ $(nmcli radio wifi) == \"enabled\" ]] && echo true || echo false'"
-        }
-      ]
     }
   }
 }

@@ -1,16 +1,17 @@
 # Run `ghostty +show-config --default --docs` to view a list of
 # all available config options and their default values.
-window-padding-x = 14
+# window-padding-x = 14
+# window-padding-color = extend
+window-padding-balance = true
 # cursor-style = block
 theme = noctalia
+# theme = TokyoNight Night
 # theme = Gruvbox Dark
 font-family = JetBrains Mono
 shell-integration-features=cursor,no-sudo,title
-background-opacity=0.9
+# background-opacity=0.9
 # background-blur=true
 window-decoration=none
-
-custom-shader-animation = true
 
 clipboard-read = allow
 clipboard-write = allow
