@@ -1,0 +1,52 @@
+// Input, gestures, and output configuration
+
+// https://yalter.github.io/niri/Configuration:-Input
+input {
+    keyboard {
+        xkb {
+            layout "us"
+        }
+        // Enable numlock on startup, omitting this setting disables it.
+        numlock
+    }
+
+    mouse {
+        accel-speed 0.0
+        accel-profile "flat"
+    }
+
+    warp-mouse-to-focus
+
+    // Setting max-scroll-amount="0%" makes it work only on windows already fully on screen.
+    focus-follows-mouse max-scroll-amount="95%"
+}
+
+gestures {
+    hot-corners {
+        off
+    }
+}
+
+// https://yalter.github.io/niri/Configuration:-Outputs
+output "DP-1" {
+    mode "2560x1440@144"
+
+    scale 1
+
+    transform "normal"
+
+    position x=0 y=0
+
+    variable-refresh-rate on-demand=true
+    focus-at-startup
+}
+
+output "DP-2" {
+    mode "3840x2160@60"
+
+    scale 1.5
+
+    transform "normal"
+
+    position x=2560 y=0
+}

@@ -7,20 +7,19 @@ inputDevice=alsa_input.usb-Elgato_Systems_Elgato_Wave_XLR_DS30M2A00048-00.mono-f
 mostUsedPresets=Luke's Mic
 plugins=rnnoise#0,stereo_tools#0,deesser#0,compressor#0,equalizer#0,gate#0,speex#0,limiter#0
 usedPresets=Luke's Mic:3
+visiblePlugin=rnnoise#0
 
 [StreamOutputs]
 mostUsedPresets=Sennheiser 560S Harman 2018,Flat
 outputDevice=alsa_output.usb-Schiit_Audio_Schiit_Modi_3E-00.analog-stereo
 plugins=equalizer#0
 usedPresets=Sennheiser 560S Harman 2018:7,Flat:4
-visiblePage=pluginsPage
 visiblePlugin=equalizer#0
 
 [Window]
 autostartOnLogin=true
-height=1372
+height=1376
 lastLoadedInputPreset=Luke's Mic
 lastLoadedOutputPreset=Sennheiser 560S Harman 2018
-visiblePage=inputPage
 visiblePipeWirePage=testSignalsPage
 width=1256
