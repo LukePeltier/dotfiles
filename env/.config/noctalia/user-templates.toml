@@ -1,7 +1,0 @@
-[config]
-
-[templates.neovim]
-input_path = "~/.config/matugen/templates/neovim-colors.lua"
-output_path = "~/.config/nvim/colors/noctalia.lua"
-post_hook = "echo 'Neovim theme updated - restart Neovim to apply'"
-
