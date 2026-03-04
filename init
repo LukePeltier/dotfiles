@@ -5,7 +5,4 @@ git submodule update
 pushd env/.config/nvim
 git checkout main
 popd
-pushd tmux-sessionizer
-git checkout master
-popd
 

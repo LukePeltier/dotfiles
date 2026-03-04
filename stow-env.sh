@@ -42,7 +42,6 @@ if [[ "${dry_run}" == "1" ]]; then
 else
    log "Stowing..."
    stow env
-   ln -sf ~/dotfiles/tmux-sessionizer/tmux-sessionizer ~/.local/bin/tmux-sessionizer
 fi
 
 log "Done"
