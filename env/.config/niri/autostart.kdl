@@ -14,3 +14,10 @@ spawn-at-startup "carla-rack" "--no-gui" "~/patchbays/gain+limit.carxp"
 spawn-at-startup "1password" "--silent"
 
 spawn-at-startup "sh" "-c" "sleep 1 && ~/.local/bin/wallpaper-set ~/Pictures/wallpapers/current"
+
+
+spawn-at-startup "swayidle" "-w" \
+  "timeout" "300" "swaylock -f" \
+  "timeout" "600" "niri msg action power-off-monitors" \
+  "resume" "niri msg action power-on-monitors" \
+  "before-sleep" "swaylock -f"
