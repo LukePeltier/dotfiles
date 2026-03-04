@@ -26,3 +26,5 @@ check_contrast = true
 
 waybar = { src = 'colors-waybar.css', dst = '~/.config/waybar/colors-wallust.css' }
 swaync = { src = 'colors-swaync.css', dst = '~/.config/swaync/colors-wallust.css' }
+rofi = { src = 'colors-rofi.rasi', dst = '~/.config/rofi/colors/wallust.rasi' }
+

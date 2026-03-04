@@ -1,0 +1,61 @@
+/* ReGreet GTK4 CSS — matugen template */
+
+window {
+    background-color: #0f1418;
+}
+
+box#body {
+    margin: 0;
+    padding: 0;
+}
+
+entry {
+    background-color: #3e4851;
+    color: #dee3e9;
+    border: none;
+    border-radius: 0;
+    padding: 8px 12px;
+    font-family: "JetBrainsMono Nerd Font", monospace;
+    font-size: 14px;
+}
+
+entry:focus {
+    border: none;
+    outline: none;
+    box-shadow: none;
+    background-color: #3e4851;
+}
+
+button {
+    background-color: transparent;
+    color: #dee3e9;
+    border: none;
+    border-radius: 0;
+    padding: 8px 16px;
+    font-family: "JetBrainsMono Nerd Font", monospace;
+    font-size: 13px;
+}
+
+button:hover {
+    background-color: #3e4851;
+}
+
+button:active,
+button:checked {
+    background-color: #8aceff;
+    color: #00344e;
+}
+
+combobox button {
+    background-color: #3e4851;
+    color: #dee3e9;
+}
+
+label {
+    color: #dee3e9;
+    font-family: "JetBrainsMono Nerd Font", monospace;
+}
+
+label.error {
+    color: #ffb4ab;
+}

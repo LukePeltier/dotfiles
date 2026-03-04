@@ -19,3 +19,11 @@ output_path = '~/.local/share/color-schemes/matugen.colors'
 [templates.swaylock]
 input_path = '~/.config/matugen/templates/swaylock-config'
 output_path = '~/.config/swaylock/config'
+
+[templates.niri]
+input_path = '~/.config/matugen/templates/niri-colors.kdl'
+output_path = '~/.config/niri/colors.kdl'
+
+[templates.regreet]
+input_path = '~/.config/matugen/templates/regreet.css'
+output_path = '~/.config/matugen/generated/regreet.css'

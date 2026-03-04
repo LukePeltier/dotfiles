@@ -55,6 +55,11 @@ window-rule {
     default-floating-position x=10 y=10 relative-to="bottom-right"
 }
 
+window-rule {
+    match app-id=r#"^org\.gnome\.Calculator$"#
+    open-floating true
+}
+
 layer-rule {
     match namespace="^swww-daemon$"
     place-within-backdrop true

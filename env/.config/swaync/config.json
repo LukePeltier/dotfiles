@@ -32,5 +32,11 @@
     "dnd": {
       "text": "Do Not Disturb"
     }
+  },
+  "notification-visibility": {
+    "electron-crash": {
+      "state": "ignored",
+      "app-name": "Crash Reporting System"
+    }
   }
 }

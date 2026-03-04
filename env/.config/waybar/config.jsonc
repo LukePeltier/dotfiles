@@ -4,7 +4,6 @@
   "position": "top",
   "spacing": 8,
   "height": 30,
-
   // === Module layout ===
   "modules-left": [
     "niri/workspaces",
@@ -12,17 +11,14 @@
   ],
   "modules-center": [
     "privacy",
-    "clock",
-    "mpris"
+    "clock"
   ],
   "modules-right": [
     "tray",
     "cpu",
     "memory",
-    "custom/mouse-battery",
     "custom/notification"
   ],
-
   // === Left modules ===
   "niri/workspaces": {
     "format": "{value}"
@@ -34,7 +30,6 @@
     "on-click-middle": "close",
     "on-click-right": "fullscreen"
   },
-
   // === Center modules ===
   "privacy": {
     "icon-spacing": 8,
@@ -43,6 +38,11 @@
     "modules": [
       {
         "type": "screenshare",
+        "tooltip": true,
+        "tooltip-icon-size": 24
+      },
+      {
+        "type": "audio-in",
         "tooltip": true,
         "tooltip-icon-size": 24
       }
@@ -78,7 +78,6 @@
     "on-click-middle": "playerctl previous",
     "tooltip": false
   },
-
   // === Right modules ===
   "tray": {
     "icon-size": 16,
@@ -94,10 +93,12 @@
     "format": "\uefc5 {used:0.1f} GB"
   },
   "custom/mouse-battery": {
-    "format": "󰍽 {}%",
+    // "format": "󰍽 {}%",
     "interval": 60,
-    "return-type": "json",
-    "exec": "~/.config/waybar/scripts/mouse-battery.sh"
+    // "return-type": "json",
+    // "exec": "~/.config/waybar/scripts/mouse-battery.sh"
+    "exec": "~/.config/waybar/scripts/logitech-battery.sh",
+    "tooltip": false
   },
   "custom/notification": {
     "tooltip": true,
@@ -119,7 +120,6 @@
     "on-click-right": "swaync-client -d -sw",
     "escape": true
   },
-
   // === Unused modules (not in any bar section) ===
   "custom/power": {
     "format": "",

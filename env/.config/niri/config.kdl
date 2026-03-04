@@ -33,7 +33,4 @@ include "window-rules.kdl"
 // Key bindings
 include "binds.kdl"
 
-// Theme colors (after layout so they take precedence)
-include "noctalia.kdl"
-
-include "./noctalia.kdl"
+include "colors.kdl"
