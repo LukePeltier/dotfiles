@@ -4,8 +4,8 @@
 # window-padding-color = extend
 window-padding-balance = true
 # cursor-style = block
-theme = noctalia
-# theme = TokyoNight Night
+# theme = noctalia
+theme = TokyoNight Night
 # theme = Gruvbox Dark
 font-family = JetBrains Mono
 shell-integration-features=cursor,no-sudo,title

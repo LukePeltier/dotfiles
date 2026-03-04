@@ -1,40 +1,24 @@
 /* Import wallust-generated colors */
 @import "colors-wallust.css";
 
-/* === Global === */
 * {
     font-family: "JetBrainsMono Nerd Font", monospace;
     font-size: 13px;
     min-height: 0;
 }
 
-/* Transparent bar with floating margin */
 window#waybar {
-    background: transparent;
-    color: @foreground;
-    margin: 2px 4px 0 4px;
-}
-
-/* === Pill group containers === */
-.modules-left,
-.modules-center,
-.modules-right {
     background-color: alpha(@background, 0.85);
-    border-radius: 14px;
-    border: 1px solid alpha(@color8, 0.3);
-    padding: 1px 6px;
-    margin: 0px 0;
+    color: @foreground;
 }
 
-/* === Workspaces === */
+/* Workspaces */
 #workspaces button {
     padding: 0 8px;
     color: @color7;
     background: transparent;
     border: none;
-    border-radius: 10px;
-    margin: 0px 1px;
-    min-width: 18px;
+    border-radius: 0;
 }
 
 #workspaces button.focused {
@@ -43,66 +27,59 @@ window#waybar {
 
 #workspaces button.active {
     color: @foreground;
-    background-color: alpha(@color5, 0.25);
 }
 
 #workspaces button.urgent {
     color: @color1;
 }
 
-#workspaces button:hover {
-    background-color: alpha(@color8, 0.2);
-}
-
-/* === Taskbar === */
+/* Taskbar */
 #taskbar button {
     padding: 0 3px;
-    border-radius: 10px;
-    margin: 0px 1px;
 }
 
-/* === Clock (centerpiece) === */
+/* Clock */
 #clock {
     color: @foreground;
     font-weight: bold;
     padding: 0 10px;
 }
 
-/* === MPRIS === */
+/* MPRIS */
 #mpris {
     color: @color5;
     padding: 0 8px;
 }
 
-/* === Privacy === */
+/* Privacy */
 #privacy {
     padding: 0 6px;
 }
 
-/* === Tray === */
+/* Tray */
 #tray {
     padding: 0 6px;
 }
 
-/* === CPU === */
+/* CPU */
 #cpu {
     color: @color6;
     padding: 0 8px;
 }
 
-/* === Memory === */
+/* Memory */
 #memory {
     color: @color5;
     padding: 0 8px;
 }
 
-/* === Mouse Battery === */
+/* Mouse Battery */
 #custom-mouse-battery {
     color: @color13;
     padding: 0 8px;
 }
 
-/* === Notifications === */
+/* Notifications */
 #custom-notification {
     color: @color4;
     padding: 0 8px;
