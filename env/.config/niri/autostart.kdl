@@ -13,4 +13,4 @@ spawn-at-startup "carla-rack" "--no-gui" "~/patchbays/gain+limit.carxp"
 
 spawn-at-startup "1password" "--silent"
 
-spawn-at-startup "sh" "-c" "sleep 1 && ~/.local/bin/wallpaper-set ~/Pictures/wallpapers/current.jpg"
+spawn-at-startup "sh" "-c" "sleep 1 && ~/.local/bin/wallpaper-set ~/Pictures/wallpapers/current"

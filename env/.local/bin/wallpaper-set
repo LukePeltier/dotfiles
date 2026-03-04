@@ -1,0 +1,41 @@
+#!/usr/bin/env bash
+# Usage: wallpaper-set <path-to-image>
+# Sets wallpaper via swww, generates colors with wallust (terminal/bar/notifications)
+# and matugen (GTK/Qt), then reloads all themed components.
+
+set -euo pipefail
+
+WALLPAPER="${1:?Usage: wallpaper-set <path-to-image>}"
+
+if [[ ! -f "$WALLPAPER" ]]; then
+  echo "File not found: $WALLPAPER" >&2
+  exit 1
+fi
+
+# Set wallpaper with a smooth transition
+swww img "$WALLPAPER" \
+  --transition-type grow \
+  --transition-duration 2 \
+  --transition-fps 60
+
+# Persist as the "current" wallpaper for autostart
+ln -sf "$(realpath "$WALLPAPER")" ~/Pictures/wallpapers/current
+
+# Generate colors from wallpaper
+# wallust: terminal sequences, waybar CSS, swaync CSS
+wallust run -s "$WALLPAPER"
+# matugen: GTK3/GTK4 CSS overrides, Qt color scheme (Material Design 3)
+matugen image "$WALLPAPER" -m dark -t scheme-fidelity --show-colors
+
+# Reload waybar (SIGUSR2 triggers config reload; fallback to restart)
+pkill -SIGUSR2 waybar 2>/dev/null || { killall -q waybar; waybar & disown; }
+
+# Reload swaync styles
+swaync-client --reload-css 2>/dev/null || true
+
+# Nudge GTK apps to re-read CSS by toggling the color scheme preference
+gsettings set org.gnome.desktop.interface color-scheme 'default' 2>/dev/null || true
+sleep 0.1
+gsettings set org.gnome.desktop.interface color-scheme 'prefer-dark' 2>/dev/null || true
+
+echo "Applied: $WALLPAPER"

@@ -1,0 +1,17 @@
+[config]
+
+[config.wallpaper]
+set = false
+command = "true"
+
+[templates.gtk3]
+input_path = '~/.config/matugen/templates/gtk3-colors.css'
+output_path = '~/.config/gtk-3.0/gtk.css'
+
+[templates.gtk4]
+input_path = '~/.config/matugen/templates/gtk4-colors.css'
+output_path = '~/.config/gtk-4.0/gtk.css'
+
+[templates.qt-colors]
+input_path = '~/.config/matugen/templates/qt-colors.conf'
+output_path = '~/.local/share/color-schemes/matugen.colors'

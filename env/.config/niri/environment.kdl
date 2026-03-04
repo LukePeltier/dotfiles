@@ -9,12 +9,15 @@ environment {
     XDG_SESSION_TYPE "wayland"
     XDG_MENU_PREFIX "arch-"
 
-    SDL_VIDEODRIVER "wayland"
     MOZ_ENABLE_WAYLAND "1"
     ELECTRON_OZONE_PLATFORM_HINT "wayland"
     OZONE_PLATFORM "wayland"
 
-    XCOMPOSEFILE "$HOME/.XCompose:"
+    XCOMPOSEFILE "$HOME/.XCompose"
 
     QS_ICON_THEME "Cosmic"
+
+    TERMCMD "ghostty"
+    SYSTEMD_EDITOR "nvim"
+    PROTON_ENABLE_WAYLAND "1"
 }
