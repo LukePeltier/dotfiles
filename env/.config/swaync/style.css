@@ -1,4 +1,4 @@
-@import "colors-wallust.css";
+@import "colors-matugen.css";
 
 /* === Global === */
 * {
@@ -173,7 +173,7 @@
   margin-bottom: 2px;
 }
 
-.widget-title > button {
+.widget-title>button {
   background: rgba(var(--color4-rgb), 0.2);
   color: var(--fg);
   border-radius: 8px;
@@ -182,7 +182,7 @@
   font-size: 12px;
 }
 
-.widget-title > button:hover {
+.widget-title>button:hover {
   background: rgba(var(--color4-rgb), 0.4);
 }
 
@@ -192,24 +192,24 @@
   margin-bottom: 4px;
 }
 
-.widget-dnd > switch {
+.widget-dnd>switch {
   background: rgba(var(--color8-rgb), 0.2);
   border-radius: 12px;
   border: none;
 }
 
-.widget-dnd > switch slider {
+.widget-dnd>switch slider {
   background: var(--color7);
   border-radius: 50%;
   min-width: 18px;
   min-height: 18px;
 }
 
-.widget-dnd > switch:checked {
+.widget-dnd>switch:checked {
   background: rgba(var(--color4-rgb), 0.5);
 }
 
-.widget-dnd > switch:checked slider {
+.widget-dnd>switch:checked slider {
   background: var(--fg);
 }
 
@@ -231,6 +231,6 @@ scrollbar slider:hover {
 }
 
 /* === Empty label (no notifications) === */
-.widget-title > label {
+.widget-title>label {
   color: var(--fg);
 }

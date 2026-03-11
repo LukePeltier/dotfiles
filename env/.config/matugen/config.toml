@@ -27,3 +27,15 @@ output_path = '~/.config/niri/colors.kdl'
 [templates.regreet]
 input_path = '~/.config/matugen/templates/regreet.css'
 output_path = '~/.config/matugen/generated/regreet.css'
+
+[templates.rofi]
+input_path = '~/.config/matugen/templates/colors-rofi.rasi'
+output_path = '~/.config/rofi/colors/matugen.rasi'
+
+[templates.waybar]
+input_path = '~/.config/matugen/templates/colors-waybar.css'
+output_path = '~/.config/waybar/colors-matugen.css'
+
+[templates.swaync]
+input_path = '~/.config/matugen/templates/colors-swaync.css'
+output_path = '~/.config/swaync/colors-matugen.css'

@@ -24,7 +24,7 @@ check_contrast = true
 # ¡ If either one is a directory, then both SHOULD be one. !
 # zathura = { template = 'zathura', target = '~/.config/zathura/zathurarc' }
 
-waybar = { src = 'colors-waybar.css', dst = '~/.config/waybar/colors-wallust.css' }
-swaync = { src = 'colors-swaync.css', dst = '~/.config/swaync/colors-wallust.css' }
-rofi = { src = 'colors-rofi.rasi', dst = '~/.config/rofi/colors/wallust.rasi' }
+# waybar = { src = 'colors-waybar.css', dst = '~/.config/waybar/colors-wallust.css' }
+# swaync = { src = 'colors-swaync.css', dst = '~/.config/swaync/colors-wallust.css' }
+# rofi = { src = 'colors-rofi.rasi', dst = '~/.config/rofi/colors/wallust.rasi' }
 

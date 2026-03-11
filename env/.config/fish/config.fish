@@ -17,6 +17,9 @@ if status is-interactive
     set -gx EDITOR nvim
     set -gx MANPAGER "nvim -c 'Man!' -"
     starship init fish | source
+    atuin init fish | source
+
+    fastfetch
 end
 
 fish_add_path /home/luke/.spicetify
