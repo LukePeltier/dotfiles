@@ -21,11 +21,18 @@ swww img "$WALLPAPER" \
 # Persist as the "current" wallpaper for autostart
 ln -sf "$(realpath "$WALLPAPER")" ~/Pictures/wallpapers/current
 
-# Generate colors from wallpaper
-# wallust: terminal sequences, waybar CSS, swaync CSS
-wallust run -s "$WALLPAPER"
+# Step 1: Get primary color from matugen
+PRIMARY_DARK=$(matugen image "$WALLPAPER" --json hex --dry-run 2>/dev/null | jq -r '.colors.primary.dark')
+PRIMARY_LIGHT=$(matugen image "$WALLPAPER" --json hex --dry-run 2>/dev/null | jq -r '.colors.primary.light')
+SURFACE=$(matugen image "$WALLPAPER" --json hex --dry-run 2>/dev/null | jq -r '.colors.surface.dark')
+echo "Primary dark: $PRIMARY_DARK"
+echo "Primary light: $PRIMARY_LIGHT"
+echo "Surface: $SURFACE"
+# Step 2: Generate dank16 variants
+VARIANTS=$(dms dank16 --variants --primary-dark "$PRIMARY_DARK" --primary-light "$PRIMARY_LIGHT")
+# Step 3: Run matugen with injected dank16 colors
 # matugen: GTK3/GTK4 CSS overrides, Qt color scheme (Material Design 3)
-matugen image "$WALLPAPER" -m dark -t scheme-fidelity --show-colors
+matugen image "$WALLPAPER" -m dark -t scheme-fidelity --show-colors --import-json-string "{\"dank16\": $VARIANTS}"
 
 # Reload waybar (SIGUSR2 triggers config reload; fallback to restart)
 pkill -SIGUSR2 waybar 2>/dev/null || { waybar & disown; }
@@ -37,5 +44,8 @@ swaync-client --reload-css 2>/dev/null || true
 gsettings set org.gnome.desktop.interface color-scheme 'default' 2>/dev/null || true
 sleep 0.1
 gsettings set org.gnome.desktop.interface color-scheme 'prefer-dark' 2>/dev/null || true
+
+# Reload ghostty
+systemctl reload --user app-com.mitchellh.ghostty.service
 
 echo "Applied: $WALLPAPER"

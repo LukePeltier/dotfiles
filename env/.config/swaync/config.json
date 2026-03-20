@@ -13,7 +13,7 @@
   "timeout-low": 4,
   "timeout-critical": 0,
   "fit-to-screen": false,
-  "keyboard-shortcuts": true,
+  "keyboard-shortcuts": false,
   "image-visibility": "when-available",
   "transition-time": 200,
   "hide-on-clear": true,

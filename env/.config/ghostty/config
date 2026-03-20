@@ -5,11 +5,12 @@
 window-padding-balance = true
 # cursor-style = block
 # theme = noctalia
-theme = TokyoNight Night
+theme = matugen
+# theme = TokyoNight Night
 # theme = Gruvbox Dark
 font-family = JetBrains Mono
 shell-integration-features=cursor,no-sudo,title
-# background-opacity=0.9
+background-opacity=0.9
 # background-blur=true
 window-decoration=none
 

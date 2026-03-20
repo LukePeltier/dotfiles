@@ -20,13 +20,13 @@
   border-radius: 12px;
   margin: 4px 0;
   padding: 0;
-  background: rgba(var(--bg-rgb), 0.92);
+  background: rgba(var(--bg-rgb), 1);
   color: var(--fg);
   border: 1px solid rgba(var(--color8-rgb), 0.3);
 }
 
 .notification:hover {
-  background: rgba(var(--bg-rgb), 0.98);
+  background: rgba(var(--bg-rgb), 1);
 }
 
 .notification-content {
@@ -149,7 +149,7 @@
 
 /* === Control center === */
 .control-center {
-  background: rgba(var(--bg-rgb), 0.92);
+  background: rgba(var(--bg-rgb), 1);
   color: var(--fg);
   border-radius: 12px;
   border: 1px solid rgba(var(--color8-rgb), 0.3);
