@@ -8,18 +8,24 @@ if status is-interactive
             end
         end
     end
+  fish_add_path "/opt/homebrew/opt/curl/bin"
+  fish_add_path "$HOME/bin"
 
-    fish_add_path "$HOME/.local/bin"
-    fish_add_path "$HOME/bin"
-    fish_add_path /opt/homebrew/opt/curl/bin
-
-    ssh-add >/dev/null 2>/dev/null
-    set -gx EDITOR nvim
-    set -gx MANPAGER "nvim -c 'Man!' -"
-    starship init fish | source
+  ssh-add > /dev/null 2>/dev/null
+  set -gx EDITOR nvim
+  set -gx MANPAGER "nvim -c 'Man!' -"
+  starship init fish | source
+  if test -r "$HOME/.atuin/bin/env.fish"
     atuin init fish | source
+  end
 
-    fastfetch
+  claude-work-proxy
+  fastfetch
 end
 
-fish_add_path /home/luke/.spicetify
+fish_add_path --append /home/luke/.spicetify
+
+# opencode
+fish_add_path --append /home/luke/.opencode/bin
+
+fish_add_path -m "$HOME/.local/bin"

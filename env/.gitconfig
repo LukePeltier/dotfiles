@@ -1,7 +1,6 @@
 [user]
   name = Luke Peltier
   email = luke@lukepeltier.com
-  signingkey = B07692B5752F8039
 
 [includeIf "hasconfig:remote.*.url:ssh://git@bitbucket.microchip.com/*/**"]
   path = ~/.gitconfig-work
@@ -32,16 +31,11 @@
 [merge]
   conflictstyle = diff3
 
-[merge "mergiraf"]
-  name = mergiraf
-  driver = mergiraf merge --git %O %A %B -s %S -x %X -y %Y -p %P -l %L
-
-
 [diff]
   colorMoved = no
 
-[commit]
-  gpgsign = true
+; [commit]
+;   gpgsign = true
 
 [pager]
   branch = false

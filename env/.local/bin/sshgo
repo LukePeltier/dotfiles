@@ -24,9 +24,9 @@ host="$1"
 if [[ $host == blr-* ]]; then
    realhost="msa${host#blr-}.automation.internal"
    shift
-   exec sshpass -f "$PASSWORD_FILE" ssh -J blrproxy -o "StrictHostKeyChecking no" root@"$realhost" "$@"
+   exec sshpass -f "$PASSWORD_FILE" ssh -J blrproxy -o "StrictHostKeyChecking no" -o "UserKnownHostsFile=/dev/null" root@"$realhost" "$@"
 else
    realhost="msa${host}.automation.internal"
    shift
-   exec sshpass -f "$PASSWORD_FILE" ssh -J houproxy -o "StrictHostKeyChecking no" root@"$realhost" "$@"
+   exec sshpass -f "$PASSWORD_FILE" ssh -J houproxy -o "StrictHostKeyChecking no" -o "UserKnownHostsFile=/dev/null" root@"$realhost" "$@"
 fi
