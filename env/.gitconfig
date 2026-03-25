@@ -2,8 +2,12 @@
   name = Luke Peltier
   email = luke@lukepeltier.com
 
+[include]
+  path = ~/.gitconfig-local
+
 [includeIf "hasconfig:remote.*.url:ssh://git@bitbucket.microchip.com/*/**"]
   path = ~/.gitconfig-work
+
 
 [alias]
   gone = "! git fetch -p && git for-each-ref --format '%(refname:short) %(upstream:track)' | awk '$2 == \"[gone]\" { print $1}' | xargs -r git branch -D"
@@ -33,9 +37,6 @@
 
 [diff]
   colorMoved = no
-
-; [commit]
-;   gpgsign = true
 
 [pager]
   branch = false
