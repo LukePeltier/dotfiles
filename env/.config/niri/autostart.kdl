@@ -5,9 +5,9 @@
 spawn-at-startup "systemctl" "--user" "start" "plasma-polkit-agent"
 spawn-at-startup "systemctl" "--user" "start" "gnome-keyring-daemon.service"
 spawn-at-startup "systemctl" "--user" "start" "cliphist.service"
-spawn-at-startup "systemctl" "--user" "start" "swaync.service"
+spawn-at-startup "systemctl" "--user" "start" "mako.service"
 spawn-at-startup "systemctl" "--user" "start" "waybar.service"
-spawn-at-startup "swww-daemon"
+spawn-at-startup "awww-daemon"
 
 // spawn-at-startup "udiskie"
 spawn-at-startup "qpwgraph"
@@ -23,3 +23,5 @@ spawn-at-startup "swayidle" "-w" \
   "timeout" "600" "niri msg action power-off-monitors" \
   "resume" "niri msg action power-on-monitors" \
   "before-sleep" "swaylock -f"
+
+spawn-at-startup "sh" "-c" "sleep 5 && easyeffects --gapplication-service"

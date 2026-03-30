@@ -1,0 +1,16 @@
+# matugen template -> outputs to ~/.config/mako/colors
+
+background-color=#111418D9
+text-color=#e1e2e9
+border-color=#414751
+
+[urgency=low]
+background-color=#1d2024D9
+text-color=#c1c7d2
+border-color=#414751
+
+[urgency=high]
+background-color=#93000a
+text-color=#ffdad6
+border-color=#ffb4ab
+

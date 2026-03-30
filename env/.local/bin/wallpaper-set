@@ -1,51 +1,56 @@
 #!/usr/bin/env bash
-# Usage: wallpaper-set <path-to-image>
-# Sets wallpaper via swww, generates colors with wallust (terminal/bar/notifications)
-# and matugen (GTK/Qt), then reloads all themed components.
-
 set -euo pipefail
 
 WALLPAPER="${1:?Usage: wallpaper-set <path-to-image>}"
+[[ -f "$WALLPAPER" ]] || { echo "File not found: $WALLPAPER" >&2; exit 1; }
 
-if [[ ! -f "$WALLPAPER" ]]; then
-  echo "File not found: $WALLPAPER" >&2
-  exit 1
-fi
+DEBUG="${DEBUG:-0}"
 
-# Set wallpaper with a smooth transition
-swww img "$WALLPAPER" \
+log()  { echo "[wallpaper-set] $*"; }
+dbg()  { [[ "$DEBUG" == 1 ]] && echo "[debug] $*" >&2 || true; }
+fail() { echo "[wallpaper-set] ERROR: $*" >&2; exit 1; }
+
+log "Setting: $WALLPAPER"
+# Set wallpaper
+awww img "$WALLPAPER" \
   --transition-type grow \
   --transition-duration 2 \
   --transition-fps 60
 
-# Persist as the "current" wallpaper for autostart
+# Persist for autostart
 ln -sf "$(realpath "$WALLPAPER")" ~/Pictures/wallpapers/current
 
-# Step 1: Get primary color from matugen
-PRIMARY_DARK=$(matugen image "$WALLPAPER" --json hex --dry-run 2>/dev/null | jq -r '.colors.primary.dark')
-PRIMARY_LIGHT=$(matugen image "$WALLPAPER" --json hex --dry-run 2>/dev/null | jq -r '.colors.primary.light')
-SURFACE=$(matugen image "$WALLPAPER" --json hex --dry-run 2>/dev/null | jq -r '.colors.surface.dark')
-echo "Primary dark: $PRIMARY_DARK"
-echo "Primary light: $PRIMARY_LIGHT"
-echo "Surface: $SURFACE"
-# Step 2: Generate dank16 variants
-VARIANTS=$(dms dank16 --variants --primary-dark "$PRIMARY_DARK" --primary-light "$PRIMARY_LIGHT")
-# Step 3: Run matugen with injected dank16 colors
-# matugen: GTK3/GTK4 CSS overrides, Qt color scheme (Material Design 3)
-matugen image "$WALLPAPER" -m dark -t scheme-fidelity --show-colors --import-json-string "{\"dank16\": $VARIANTS}"
+log "Extracting colors..."
 
-# Reload waybar (SIGUSR2 triggers config reload; fallback to restart)
+# Extract colors (single matugen call instead of 3)
+MATUGEN_JSON=$(matugen image "$WALLPAPER" --source-color-index 0  -j hex --old-json-output --dry-run 2>/dev/null) || {
+  echo "$MATUGEN_JSON" >&2
+  fail "matugen dry-run failed"
+}
+dbg "matugen JSON: $MATUGEN_JSON"
+
+PRIMARY_DARK=$(jq -r '.colors.primary.dark' <<< "$MATUGEN_JSON") || fail "Failed to extract primary.dark from matugen output"
+PRIMARY_LIGHT=$(jq -r '.colors.primary.light' <<< "$MATUGEN_JSON") || fail "Failed to extract primary.light from matugen output"
+SURFACE=$(jq -r '.colors.surface.dark' <<< "$MATUGEN_JSON")
+log "Primary: $PRIMARY_DARK / $PRIMARY_LIGHT Surface $SURFACE"
+
+# Generate dank16 variants and run matugen with them
+VARIANTS=$(dms dank16 --variants --primary-dark "$PRIMARY_DARK" --primary-light "$PRIMARY_LIGHT") || fail "dms dank16 failed"
+dbg "dank16 variants: $VARIANTS"
+
+log "Running matugen..."
+matugen image "$WALLPAPER" --source-color-index 0 -m dark -t scheme-fidelity --show-colors \
+  --import-json-string "{\"dank16\": $VARIANTS}" || fail "matugen full run failed"
+log "Reloading..."
+
+# Reload themed components
 pkill -SIGUSR2 waybar 2>/dev/null || { waybar & disown; }
-
-# Reload swaync styles
 swaync-client --reload-css 2>/dev/null || true
-
-# Nudge GTK apps to re-read CSS by toggling the color scheme preference
-gsettings set org.gnome.desktop.interface color-scheme 'default' 2>/dev/null || true
-sleep 0.1
-gsettings set org.gnome.desktop.interface color-scheme 'prefer-dark' 2>/dev/null || true
-
-# Reload ghostty
 systemctl reload --user app-com.mitchellh.ghostty.service
+
+# Nudge GTK apps to re-read CSS
+gsettings set org.gnome.desktop.interface color-scheme 'default' 2>/dev/null
+sleep 0.1
+gsettings set org.gnome.desktop.interface color-scheme 'prefer-dark' 2>/dev/null
 
 echo "Applied: $WALLPAPER"

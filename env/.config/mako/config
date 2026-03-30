@@ -1,0 +1,22 @@
+font=JetBrains Mono 10
+anchor=top-right
+layer=overlay
+default-timeout=5000
+max-visible=3
+sort=-time
+
+width=350
+height=100
+margin=8
+padding=10
+border-size=1
+border-radius=0
+
+include=~/.config/mako/colors
+
+[urgency=low]
+default-timeout=3000
+
+[urgency=high]
+default-timeout=0
+
