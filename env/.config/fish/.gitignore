@@ -4,30 +4,13 @@ fish_variables
 !/completions/.gitkeep
 
 /functions/*
-!/functions/bat.fish
-!/functions/cat.fish
-!/functions/fish_greeting.fish
-!/functions/fish_user_key_bindings.fish
-!/functions/fixit.fish
-!/functions/fuck.fish
-!/functions/ll.fish
-!/functions/ls.fish
-!/functions/fisher.fish
-!/functions/y.fish
 
 /themes/*
 !/themes/.gitkeep
 
-/conf.d/*
-!/conf.d/.gitkeep
-!/conf.d/brew.fish
-!/conf.d/deno.fish
-!/conf.d/mise.fish
-!/conf.d/opam.fish
-!/conf.d/rustup.fish
-!/conf.d/uv.fish
-!/conf.d/zoxide.fish
-!/conf.d/zvm.fish
-!/conf.d/atuin.env.fish
-!/conf.d/nix.fish
-!/conf.d/wayland.fish
+/conf.d/autopair.fish
+/conf.d/fish-ssh-agent.fish
+/conf.d/fzf.fish
+/conf.d/git.fish
+/conf.d/nix-env.fish
+/conf.d/fish_frozen_theme.fish

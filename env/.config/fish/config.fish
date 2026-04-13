@@ -1,3 +1,5 @@
+set -p fish_function_path $__fish_config_dir/custom_functions
+
 if status is-interactive
 
     # Only run on TTY1
@@ -19,7 +21,6 @@ if status is-interactive
     atuin init fish | source
   end
 
-  claude-work-proxy
   fastfetch
 end
 
