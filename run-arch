@@ -1,0 +1,41 @@
+#!/usr/bin/env bash
+
+cat << 'EOF'
+██╗     ██╗   ██╗██╗  ██╗███████╗    ██████╗  ██████╗ ████████╗███████╗██╗██╗     ███████╗███████╗
+██║     ██║   ██║██║ ██╔╝██╔════╝    ██╔══██╗██╔═══██╗╚══██╔══╝██╔════╝██║██║     ██╔════╝██╔════╝
+██║     ██║   ██║█████╔╝ █████╗      ██║  ██║██║   ██║   ██║   █████╗  ██║██║     █████╗  ███████╗
+██║     ██║   ██║██╔═██╗ ██╔══╝      ██║  ██║██║   ██║   ██║   ██╔══╝  ██║██║     ██╔══╝  ╚════██║
+███████╗╚██████╔╝██║  ██╗███████╗    ██████╔╝╚██████╔╝   ██║   ██║     ╚═╝███████╗███████╗███████║
+╚══════╝ ╚═════╝ ╚═╝  ╚═╝╚══════╝    ╚═════╝  ╚═════╝    ╚═╝   ╚═╝      ╚══════╝╚══════╝╚══════╝
+EOF
+
+set -euo pipefail
+
+script_dir="$( cd "$( dirname "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )"
+runs="$script_dir/runs"
+
+step() {
+  echo ""
+  echo "==> $1"
+  "$runs/$1"
+}
+
+# Package manager
+step arch/paru.sh
+
+# System packages
+step arch/packages.sh
+
+# Shell
+step common/fish.sh
+
+# Toolchains
+step common/mise.sh
+step common/rust.sh
+step common/go.fish
+step common/python.sh
+step common/node.fish
+
+# Tools
+step common/tmux.sh
+step common/neovim.sh
