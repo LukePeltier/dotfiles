@@ -60,6 +60,11 @@ window-rule {
     open-floating true
 }
 
+window-rule {
+    match app-id="org.freedesktop.impl.portal.desktop.kde"
+    open-floating true
+}
+
 layer-rule {
     match namespace="^swww-daemon$"
     place-within-backdrop true

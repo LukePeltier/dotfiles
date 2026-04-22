@@ -17,8 +17,7 @@ usedPresets=Sennheiser 560S Harman 2018:10,Flat:5
 visiblePlugin=equalizer#0
 
 [Window]
-height=1384
+height=1368
 lastLoadedInputPreset=Luke's Mic
 lastLoadedOutputPreset=Sennheiser 560S Harman 2018
-visiblePage=inputPage
 width=1696

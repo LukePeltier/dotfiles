@@ -14,7 +14,8 @@ output_path = '~/.config/gtk-4.0/gtk.css'
 
 [templates.qt-colors]
 input_path = '~/.config/matugen/templates/qt-colors.conf'
-output_path = '~/.local/share/color-schemes/matugen.colors'
+output_path = '~/.local/share/color-schemes/luke-matugen.colors'
+post_hook = "plasma-apply-colorscheme luke-matugen && killall xdg-desktop-portal-kde"
 
 [templates.swaylock]
 input_path = '~/.config/matugen/templates/swaylock-config'
