@@ -1,5 +1,4 @@
 #!/usr/bin/env fish
-set -e
 
 command -v mise &>/dev/null; or begin; echo "mise required (run mise.sh first)"; exit 1; end
 
