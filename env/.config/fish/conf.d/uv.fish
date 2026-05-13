@@ -1,1 +1,2 @@
-test -r "$HOME/.local/bin/uv" && uv generate-shell-completion fish | source
+# Completion is generated once into completions/uv.fish.
+# Regenerating it on every shell startup is very slow.

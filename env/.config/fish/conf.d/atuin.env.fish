@@ -1,3 +1,5 @@
+status is-interactive || exit
+
 if command -v atuin &>/dev/null
     set -gx ATUIN_NOBIND true
     atuin init fish | source

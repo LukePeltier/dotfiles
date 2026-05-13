@@ -1,3 +1,3 @@
 # Added by LM Studio CLI (lms)
-set -gx PATH $PATH /home/luke/.lmstudio/bin
+test -d "$HOME/.lmstudio/bin"; and fish_add_path --append "$HOME/.lmstudio/bin"
 # End of LM Studio CLI section
