@@ -27,3 +27,9 @@ layout {
     }
 
 }
+
+overview {
+    workspace-shadow {
+        off
+    }
+}

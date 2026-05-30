@@ -46,9 +46,9 @@ output "DP-1" {
 }
 
 output "DP-2" {
-    mode "3840x2160@60"
+    mode "2560x1440@60"
 
-    scale 1.5
+    scale 1
 
     transform "normal"
 
