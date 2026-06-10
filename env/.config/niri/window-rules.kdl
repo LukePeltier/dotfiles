@@ -71,3 +71,10 @@ layer-rule {
     place-within-backdrop true
 }
 
+
+window-rule {
+    match app-id="^com.mitchellh.ghostty$"
+    background-effect {
+        blur true
+    }
+}
