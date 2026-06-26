@@ -1,12 +1,12 @@
 :root {
-  --bg: #111418;
-  --bg-rgb: 17, 20, 24;
-  --fg: #e1e2e9;
-  --color4: #a0c9ff;
-  --color4-rgb: 160, 201, 255;
-  --color5: #b2c8e9;
-  --color5-rgb: 178, 200, 233;
-  --color7: #c1c7d2;
-  --color8: #414751;
-  --color8-rgb: 65, 71, 81;
+  --bg: #121317;
+  --bg-rgb: 18, 19, 23;
+  --fg: #e3e2e7;
+  --color4: #abc7ff;
+  --color4-rgb: 171, 199, 255;
+  --color5: #bcc7df;
+  --color5-rgb: 188, 199, 223;
+  --color7: #c4c6d0;
+  --color8: #43474f;
+  --color8-rgb: 67, 71, 79;
 }
