@@ -1,7 +1,15 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-WALLPAPER="${1:?Usage: wallpaper-set <path-to-image>}"
+NO_PLASMA=0
+while [[ "${1:-}" =~ ^-- ]]; do
+  case "$1" in
+    --plasma) NO_PLASMA=1; shift ;;
+    *) echo "Unknown option: $1" >&2; exit 1 ;;
+  esac
+done
+
+WALLPAPER="${1:?Usage: wallpaper-set [--plasma] <path-to-image>}"
 [[ -f "$WALLPAPER" ]] || { echo "File not found: $WALLPAPER" >&2; exit 1; }
 
 DEBUG="${DEBUG:-0}"
@@ -12,10 +20,14 @@ fail() { echo "[wallpaper-set] ERROR: $*" >&2; exit 1; }
 
 log "Setting: $WALLPAPER"
 # Set wallpaper
-awww img "$WALLPAPER" \
-  --transition-type grow \
-  --transition-duration 2 \
-  --transition-fps 60
+if [[ "$NO_PLASMA" == 0 ]]; then
+  awww img "$WALLPAPER" \
+    --transition-type grow \
+    --transition-duration 2 \
+    --transition-fps 60
+else
+  log "Skipping awww (--plasma set)"
+fi
 
 # Persist for autostart
 ln -sf "$(realpath "$WALLPAPER")" ~/Pictures/wallpapers/current
@@ -44,13 +56,17 @@ matugen image "$WALLPAPER" --source-color-index 0 -m dark -t scheme-fidelity --s
 log "Reloading..."
 
 # Reload themed components
-pkill -SIGUSR2 waybar 2>/dev/null || { waybar & disown; }
-swaync-client --reload-css 2>/dev/null || true
-systemctl reload --user app-com.mitchellh.ghostty.service
+if [[ "$NO_PLASMA" == 0 ]]; then
+  pkill -SIGUSR2 waybar 2>/dev/null || { waybar & disown; }
+  swaync-client --reload-css 2>/dev/null || true
+  systemctl reload --user app-com.mitchellh.ghostty.service
 
-# Nudge GTK apps to re-read CSS
-gsettings set org.gnome.desktop.interface color-scheme 'default' 2>/dev/null
-sleep 0.1
-gsettings set org.gnome.desktop.interface color-scheme 'prefer-dark' 2>/dev/null
+  # Nudge GTK apps to re-read CSS
+  gsettings set org.gnome.desktop.interface color-scheme 'default' 2>/dev/null
+  sleep 0.1
+  gsettings set org.gnome.desktop.interface color-scheme 'prefer-dark' 2>/dev/null
+else
+  log "Skipping waybar/swaync/gsettings reloads (--plasma set)"
+fi
 
 echo "Applied: $WALLPAPER"
