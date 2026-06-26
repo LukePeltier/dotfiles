@@ -1,4 +1,3 @@
 [sie][Speex#0]
-bypass=true
 enableDenoise=false
 enableVad=true

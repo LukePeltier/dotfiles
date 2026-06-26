@@ -3,3 +3,10 @@ attack=1
 dithering=6
 mode=1
 threshold=-1
+
+[soe][Limiter#0]
+alr=true
+attack=1
+gainBoost=false
+release=20
+threshold=-3

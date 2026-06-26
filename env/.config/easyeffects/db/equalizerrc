@@ -170,6 +170,10 @@ band8Frequency=7500
 band8Gain=4.300000190734863
 band8Mode=6
 band8Q=0.5
+band9Frequency=10000
+band9Gain=-5.300000190734863
+band9Mode=6
+band9Q=0.6666666865348816
 band9Type=0
 
 [soe][Equalizer#0#right]
@@ -231,4 +235,8 @@ band8Frequency=7500
 band8Gain=4.300000190734863
 band8Mode=6
 band8Q=0.5
+band9Frequency=10000
+band9Gain=-5.300000190734863
+band9Mode=6
+band9Q=0.6666666865348816
 band9Type=0
