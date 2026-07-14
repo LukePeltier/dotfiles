@@ -1,0 +1,19 @@
+{
+  "lastChangelogVersion": "0.80.6",
+  "defaultProvider": "zai",
+  "defaultModel": "glm-5.2",
+  "defaultThinkingLevel": "high",
+  "packages": [
+    "npm:pi-anthropic-oauth",
+    "npm:pi-opencode-provider",
+    "npm:pi-web-access",
+    "npm:@juicesharp/rpiv-ask-user-question",
+    "npm:@juicesharp/rpiv-todo",
+    "npm:pi-subagents",
+    "npm:@ff-labs/pi-fff"
+  ],
+  "theme": "dark",
+  "steeringMode": "all",
+  "enableInstallTelemetry": false,
+  "hideThinkingBlock": true
+}
