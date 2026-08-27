@@ -1,7 +1,7 @@
 /* ReGreet GTK4 CSS — matugen template */
 
 window {
-    background-color: #121317;
+    background-color: #111318;
 }
 
 box#body {
@@ -10,8 +10,8 @@ box#body {
 }
 
 entry {
-    background-color: #43474f;
-    color: #e3e2e7;
+    background-color: #44474e;
+    color: #e2e2e9;
     border: none;
     border-radius: 0;
     padding: 8px 12px;
@@ -23,12 +23,12 @@ entry:focus {
     border: none;
     outline: none;
     box-shadow: none;
-    background-color: #43474f;
+    background-color: #44474e;
 }
 
 button {
     background-color: transparent;
-    color: #e3e2e7;
+    color: #e2e2e9;
     border: none;
     border-radius: 0;
     padding: 8px 16px;
@@ -37,22 +37,22 @@ button {
 }
 
 button:hover {
-    background-color: #43474f;
+    background-color: #44474e;
 }
 
 button:active,
 button:checked {
     background-color: #abc7ff;
-    color: #0c305f;
+    color: #0b305f;
 }
 
 combobox button {
-    background-color: #43474f;
-    color: #e3e2e7;
+    background-color: #44474e;
+    color: #e2e2e9;
 }
 
 label {
-    color: #e3e2e7;
+    color: #e2e2e9;
     font-family: "JetBrainsMono Nerd Font", monospace;
 }
 

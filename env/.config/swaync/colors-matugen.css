@@ -1,12 +1,12 @@
 :root {
-  --bg: #121317;
-  --bg-rgb: 18, 19, 23;
-  --fg: #e3e2e7;
+  --bg: #111318;
+  --bg-rgb: 17, 19, 24;
+  --fg: #e2e2e9;
   --color4: #abc7ff;
   --color4-rgb: 171, 199, 255;
-  --color5: #bcc7df;
-  --color5-rgb: 188, 199, 223;
+  --color5: #bec6dc;
+  --color5-rgb: 190, 198, 220;
   --color7: #c4c6d0;
-  --color8: #43474f;
-  --color8-rgb: 67, 71, 79;
+  --color8: #44474e;
+  --color8-rgb: 68, 71, 78;
 }
