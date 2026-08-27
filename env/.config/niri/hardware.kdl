@@ -37,7 +37,6 @@ output "DP-1" {
 
     position x=0 y=0
 
-    variable-refresh-rate on-demand=true
     focus-at-startup
 
     // layout {
@@ -46,7 +45,7 @@ output "DP-1" {
 }
 
 output "DP-2" {
-    mode "2560x1440@60"
+    mode "2560x1440@144.000"
 
     scale 1
 

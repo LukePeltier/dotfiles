@@ -19,8 +19,10 @@ window-rule {
 }
 
 window-rule {
-    match app-id="gamescope"
+    match app-id=r#"^gamescope$"#
     open-fullscreen true
+    geometry-corner-radius 0
+    clip-to-geometry false
 }
 
 window-rule {
@@ -77,4 +79,9 @@ window-rule {
     background-effect {
         blur true
     }
+}
+
+window-rule {
+    match app-id="^astragalos$"
+    open-floating true
 }
