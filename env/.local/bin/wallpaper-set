@@ -4,19 +4,31 @@ set -euo pipefail
 NO_PLASMA=0
 while [[ "${1:-}" =~ ^-- ]]; do
   case "$1" in
-    --plasma) NO_PLASMA=1; shift ;;
-    *) echo "Unknown option: $1" >&2; exit 1 ;;
+  --plasma)
+    NO_PLASMA=1
+    shift
+    ;;
+  *)
+    echo "Unknown option: $1" >&2
+    exit 1
+    ;;
   esac
 done
 
 WALLPAPER="${1:?Usage: wallpaper-set [--plasma] <path-to-image>}"
-[[ -f "$WALLPAPER" ]] || { echo "File not found: $WALLPAPER" >&2; exit 1; }
+[[ -f "$WALLPAPER" ]] || {
+  echo "File not found: $WALLPAPER" >&2
+  exit 1
+}
 
 DEBUG="${DEBUG:-0}"
 
-log()  { echo "[wallpaper-set] $*"; }
-dbg()  { [[ "$DEBUG" == 1 ]] && echo "[debug] $*" >&2 || true; }
-fail() { echo "[wallpaper-set] ERROR: $*" >&2; exit 1; }
+log() { echo "[wallpaper-set] $*"; }
+dbg() { [[ "$DEBUG" == 1 ]] && echo "[debug] $*" >&2 || true; }
+fail() {
+  echo "[wallpaper-set] ERROR: $*" >&2
+  exit 1
+}
 
 log "Setting: $WALLPAPER"
 # Set wallpaper
@@ -35,15 +47,15 @@ ln -sf "$(realpath "$WALLPAPER")" ~/Pictures/wallpapers/current
 log "Extracting colors..."
 
 # Extract colors (single matugen call instead of 3)
-MATUGEN_JSON=$(matugen image "$WALLPAPER" --source-color-index 0  -j hex --old-json-output --dry-run 2>/dev/null) || {
+MATUGEN_JSON=$(matugen image "$WALLPAPER" --source-color-index 0 -j hex --old-json-output --dry-run 2>/dev/null) || {
   echo "$MATUGEN_JSON" >&2
   fail "matugen dry-run failed"
 }
 dbg "matugen JSON: $MATUGEN_JSON"
 
-PRIMARY_DARK=$(jq -r '.colors.primary.dark' <<< "$MATUGEN_JSON") || fail "Failed to extract primary.dark from matugen output"
-PRIMARY_LIGHT=$(jq -r '.colors.primary.light' <<< "$MATUGEN_JSON") || fail "Failed to extract primary.light from matugen output"
-SURFACE=$(jq -r '.colors.surface.dark' <<< "$MATUGEN_JSON")
+PRIMARY_DARK=$(jq -r '.colors.primary.dark' <<<"$MATUGEN_JSON") || fail "Failed to extract primary.dark from matugen output"
+PRIMARY_LIGHT=$(jq -r '.colors.primary.light' <<<"$MATUGEN_JSON") || fail "Failed to extract primary.light from matugen output"
+SURFACE=$(jq -r '.colors.surface.dark' <<<"$MATUGEN_JSON")
 log "Primary: $PRIMARY_DARK / $PRIMARY_LIGHT Surface $SURFACE"
 
 # Generate dank16 variants and run matugen with them
@@ -57,7 +69,7 @@ log "Reloading..."
 
 # Reload themed components
 if [[ "$NO_PLASMA" == 0 ]]; then
-  pkill -SIGUSR2 waybar 2>/dev/null || { waybar & disown; }
+  systemctl --user restart waybar.service
   swaync-client --reload-css 2>/dev/null || true
   systemctl reload --user app-com.mitchellh.ghostty.service
 
