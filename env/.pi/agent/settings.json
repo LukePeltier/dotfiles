@@ -1,19 +1,15 @@
 {
-  "lastChangelogVersion": "0.80.6",
-  "defaultProvider": "zai",
-  "defaultModel": "glm-5.2",
+  "lastChangelogVersion": "0.84.3",
+  "defaultProvider": "openai-codex",
+  "defaultModel": "gpt-5.6-sol",
   "defaultThinkingLevel": "high",
   "packages": [
-    "npm:pi-anthropic-oauth",
     "npm:pi-opencode-provider",
-    "npm:pi-web-access",
-    "npm:@juicesharp/rpiv-ask-user-question",
-    "npm:@juicesharp/rpiv-todo",
-    "npm:pi-subagents",
-    "npm:@ff-labs/pi-fff"
+    "npm:@juicesharp/rpiv-ask-user-question"
   ],
   "theme": "dark",
   "steeringMode": "all",
   "enableInstallTelemetry": false,
-  "hideThinkingBlock": true
+  "hideThinkingBlock": true,
+  "collapseChangelog": true
 }
