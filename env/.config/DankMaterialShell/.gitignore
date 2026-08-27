@@ -1,0 +1,8 @@
+# DMS runtime markers and generated theme files
+.changelog-*
+.firstlaunch
+firefox.css
+zen.css
+
+# Plugins are installed and updated by DMS and may contain nested Git repositories.
+plugins/

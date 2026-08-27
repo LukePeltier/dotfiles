@@ -1,3 +1,7 @@
 tmux/.config/tmux/plugins/
 .aider*
 .DS_Store
+
+# DankMaterialShell-generated integration files
+/env/.config/niri/dms/
+/env/.config/ghostty/themes/dankcolors
