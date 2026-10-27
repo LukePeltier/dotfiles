@@ -1,0 +1,3 @@
+[submodule "env/.pi/agent"]
+	path = env/.pi/agent
+	url = ssh://git@forgejo.shire-chicken.ts.net/LukePeltier/pi-config.git
