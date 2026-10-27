@@ -1,3 +1,0 @@
-[submodule "env/.pi/agent/extensions/pi-ask-user-question"]
-	path = env/.pi/agent/extensions/pi-ask-user-question
-	url = ssh://git@forgejo.shire-chicken.ts.net/LukePeltier/pi-ask-user-question.git
