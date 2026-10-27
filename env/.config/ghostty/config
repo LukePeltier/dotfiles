@@ -18,12 +18,8 @@ clipboard-read = allow
 clipboard-write = allow
 
 
-# custom-shader = /home/luke/.config/ghostty/shaders/ghostty-shaders/tft.glsl
-# custom-shader = /home/luke/.config/ghostty/shaders/ghostty-shaders/bettercrt.glsl
-# custom-shader = /home/luke/.config/ghostty/shaders/ghostty-shaders/bloom.glsl
 
 
 # custom-shader = /home/luke/.config/ghostty/shaders/cursor_blaze.glsl
-# custom-shader = /home/luke/.config/ghostty/shaders/ghostty-shaders/cursor_blaze.glsl
 
 keybind = ctrl+n=unbind
