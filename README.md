@@ -16,7 +16,7 @@ Personal config for Arch (niri, Dank Material Shell) and macOS. Files under `env
 
 | Path | Repo |
 | --- | --- |
-| `env/.pi/agent` | `pi-config`: [pi](https://github.com/earendil-works/pi) extensions and settings. Contains its own nested submodule, `extensions/pi-ask-user-question`. |
+| `env/.pi/agent` | `pi-config`: pi (coding agent) extensions and settings. Contains its own nested submodule, `extensions/pi-ask-user-question`. |
 
 Edits inside a submodule are committed and pushed in that repo first. Then commit the updated submodule pointer here.
 
