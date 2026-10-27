@@ -1,5 +1,25 @@
 {
   "emojiLauncher": {
     "enabled": true
+  },
+  "dankActions": {
+    "enabled": true,
+    "variants": [
+      {
+        "icon": "mouse",
+        "displayText": "",
+        "displayCommand": "/usr/local/bin/miaobat",
+        "clickCommand": "",
+        "middleClickCommand": "",
+        "rightClickCommand": "",
+        "updateInterval": 60,
+        "showIcon": true,
+        "showText": true,
+        "visibilityCommand": "",
+        "visibilityInterval": 0,
+        "id": "variant_1787865596228",
+        "name": "Angry Miao Battery"
+      }
+    ]
   }
 }
