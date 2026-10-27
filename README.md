@@ -27,7 +27,7 @@ git clone --recurse-submodules <url> ~/dotfiles
 cd ~/dotfiles
 
 ./run-arch        # or ./run-macos: packages, fish, toolchains, tmux, neovim
-stow -t ~ env     # link dotfiles into $HOME
+stow env          # link dotfiles into $HOME (run from ~/dotfiles; stow targets the parent dir)
 ```
 
 If you cloned without `--recurse-submodules`, run `./init` (or `git submodule update --init --recursive`).
