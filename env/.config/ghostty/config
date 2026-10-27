@@ -5,12 +5,12 @@
 window-padding-balance = true
 # cursor-style = block
 # theme = noctalia
-theme = matugen
+# theme = matugen
 # theme = Kanagawa Dragon
-# theme = TokyoNight Night
+theme = TokyoNight Night
 # theme = Gruvbox Dark
 font-family = JetBrains Mono
-shell-integration-features=cursor,no-sudo,title,ssh-env,ssh-terminfo
+shell-integration-features=cursor,no-sudo,title
 background-opacity=0.7
 background-blur=true
 window-decoration=auto
@@ -26,3 +26,4 @@ clipboard-write = allow
 # custom-shader = /home/luke/.config/ghostty/shaders/cursor_blaze.glsl
 # custom-shader = /home/luke/.config/ghostty/shaders/ghostty-shaders/cursor_blaze.glsl
 
+keybind = ctrl+n=unbind
