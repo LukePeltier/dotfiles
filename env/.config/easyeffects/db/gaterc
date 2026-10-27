@@ -1,6 +1,6 @@
 [sie][Gate#0]
 attack=10
-curveThreshold=-35
+curveThreshold=-45
 curveZone=-2
 hysteresis=true
 hysteresisThreshold=-3

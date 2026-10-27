@@ -1,5 +1,6 @@
 [sie][Compressor#0]
 attack=5
+makeup=4
 release=75
 releaseThreshold=-40
 sidechainMode=1
